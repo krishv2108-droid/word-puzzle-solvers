@@ -1,0 +1,3155 @@
+{
+ "name": "embedding (all-MiniLM-L6-v2)",
+ "episodes": [
+  {
+   "puzzle_id": "2",
+   "solved": false,
+   "steps": 1,
+   "seconds": 6.359911458042916,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "12",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.029583542025648057,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 1.0,
+    "tier_yellow": 0.0,
+    "tier_green": 1.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "14",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.029460416990332305,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "15",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.02921941695967689,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "17",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.028064750018529594,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "19",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.02940250001847744,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "24",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.028822499967645854,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "34",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.02767437504371628,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 1.0,
+    "tier_yellow": 1.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "38",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.02786291704978794,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 1.0,
+    "tier_yellow": 0.0,
+    "tier_green": 1.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "40",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.02825541701167822,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "42",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.02842345804674551,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 1.0,
+    "tier_yellow": 1.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "47",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.028461458045057952,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 1.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 1.0
+   }
+  },
+  {
+   "puzzle_id": "60",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.028024250001180917,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "62",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.026990292011760175,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "64",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.027373542019631714,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "65",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.02710679202573374,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "71",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.027329125034157187,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "76",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.02718433295376599,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 2.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 1.0,
+    "tier_purple": 1.0
+   }
+  },
+  {
+   "puzzle_id": "83",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.028035915980581194,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "85",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.02739800000563264,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "92",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.028415792039595544,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "94",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.028854832984507084,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 1.0,
+    "tier_yellow": 0.0,
+    "tier_green": 1.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "95",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.034866209025494754,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 2.0,
+    "tier_yellow": 1.0,
+    "tier_green": 1.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "96",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.029536416986957192,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 1.0,
+    "tier_yellow": 0.0,
+    "tier_green": 1.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "97",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.029758833989035338,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "98",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.0297813750221394,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "100",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.02790074999211356,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "102",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.02836400002706796,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "104",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.02788724994752556,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "108",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.02831741701811552,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "112",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.026713291998021305,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 1.0,
+    "tier_yellow": 1.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "119",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.026515291014220566,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "120",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.02780729200458154,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 1.0,
+    "tier_yellow": 1.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "128",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.027909500000532717,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "134",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.027060416992753744,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "143",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.0271868749987334,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "144",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.02709404204506427,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "146",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.027037124964408576,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 1.0,
+    "tier_yellow": 0.0,
+    "tier_green": 1.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "150",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.02801091701257974,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "151",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.026763125031720847,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 1.0,
+    "tier_yellow": 1.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "154",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.027318915992509574,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 1.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 1.0
+   }
+  },
+  {
+   "puzzle_id": "175",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.026425582997035235,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 1.0,
+    "tier_yellow": 0.0,
+    "tier_green": 1.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "182",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.026956707995850593,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 1.0,
+    "tier_yellow": 1.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "190",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.02657250000629574,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "192",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.026701666007284075,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 2.0,
+    "tier_yellow": 1.0,
+    "tier_green": 1.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "194",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.02666479197796434,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "195",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.025922916014678776,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 1.0,
+    "tier_yellow": 0.0,
+    "tier_green": 1.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "196",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.026910374988801777,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "201",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.02634058304829523,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "210",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.026267250010278076,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "213",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.026416458014864475,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "223",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.02611004194477573,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 1.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 1.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "226",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.027123874984681606,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "227",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.026406124990899116,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "228",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.029991500021424145,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "230",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.02702116599539295,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 1.0,
+    "tier_yellow": 0.0,
+    "tier_green": 1.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "248",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.026667332975193858,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "255",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.02694770903326571,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "251",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.026246791996527463,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "250",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.02667816705070436,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 1.0,
+    "tier_yellow": 0.0,
+    "tier_green": 1.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "254",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.02654391701798886,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "258",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.027463458012789488,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 1.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 1.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "264",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.026254666037857533,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 1.0,
+    "tier_yellow": 1.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "269",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.026006624975707382,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "272",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.03047804202651605,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "284",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.026186375005636364,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "285",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.02638920902973041,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "287",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.026618583011440933,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "288",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.028356458991765976,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 1.0,
+    "tier_yellow": 1.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "294",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.026360958989243954,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 2.0,
+    "tier_yellow": 1.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 1.0
+   }
+  },
+  {
+   "puzzle_id": "301",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.026617708965204656,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "307",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.02618691697716713,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "303",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.02671287499833852,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "298",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.027011875004973263,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "321",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.02770733297802508,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "318",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.025896666978951544,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 1.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 1.0
+   }
+  },
+  {
+   "puzzle_id": "325",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.03103183297207579,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "333",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.027661249972879887,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "332",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.025455459021031857,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "334",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.03105154202785343,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "335",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.026727791992016137,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "348",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.02558179199695587,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "353",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.029319750028662384,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "360",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.026494374964386225,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "358",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.026206084003206342,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "357",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.027108624984975904,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "364",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.026371666986960918,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "365",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.026751500030513853,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 1.0,
+    "tier_yellow": 1.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "379",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.0264214999624528,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "386",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.026454292004927993,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "376",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.02910074999090284,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "378",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.026469500036910176,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "395",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.025873166043311357,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "401",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.02957391698146239,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 1.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 1.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "414",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.026564166008029133,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 2.0,
+    "tier_yellow": 1.0,
+    "tier_green": 1.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "422",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.028027333959471434,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "427",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.026697458000853658,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "437",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.027128374960739166,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "448",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.02630387496901676,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "441",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.02625695802271366,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "451",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.025991166010499,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 2.0,
+    "tier_yellow": 0.0,
+    "tier_green": 1.0,
+    "tier_blue": 1.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "450",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.026178916974458843,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 1.0,
+    "tier_yellow": 1.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "453",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.028128125006332994,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 1.0,
+    "tier_yellow": 1.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "458",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.026402708026580513,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "473",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.026135749998502433,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "486",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.026187374955043197,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 2.0,
+    "tier_yellow": 1.0,
+    "tier_green": 0.0,
+    "tier_blue": 1.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "487",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.02645795897115022,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "471",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.02621045900741592,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "474",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.026349332998506725,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 1.0,
+    "tier_yellow": 1.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "499",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.02633925003465265,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 1.0,
+    "tier_yellow": 1.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "482",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.026895125047303736,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "512",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.028155125037301332,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "520",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.026143291033804417,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 1.0,
+    "tier_yellow": 0.0,
+    "tier_green": 1.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "521",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.02583045803476125,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "528",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.031243041972629726,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "530",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.02613233297597617,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 1.0,
+    "tier_yellow": 0.0,
+    "tier_green": 1.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "529",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.0272094999672845,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "505",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.02636262500891462,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "531",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.026929082989227027,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "537",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.02697945898398757,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 1.0,
+    "tier_yellow": 1.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "532",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.026095833047293127,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "541",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.02628200000617653,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "546",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.026791709009557962,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 1.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 1.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "551",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.026255875010974705,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "557",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.026240667037200183,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "563",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.02597116702236235,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "559",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.025991292030084878,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 1.0,
+    "tier_yellow": 1.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "565",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.028332167014013976,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "577",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.026333542016800493,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "579",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.027831916988361627,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "588",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.025477625022176653,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "584",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.028183499991428107,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "585",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.02612800005590543,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "590",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.02594612498069182,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "573",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.02594858396332711,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "593",
+   "solved": true,
+   "steps": 1,
+   "seconds": 0.028001166007015854,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 4.0,
+    "tier_yellow": 1.0,
+    "tier_green": 1.0,
+    "tier_blue": 1.0,
+    "tier_purple": 1.0
+   }
+  },
+  {
+   "puzzle_id": "592",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.026358709030319005,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 1.0,
+    "tier_yellow": 0.0,
+    "tier_green": 1.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "596",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.027536750014405698,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "594",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.02630837500328198,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "599",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.02527287503471598,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 1.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 1.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "601",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.02590762497857213,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "604",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.028066708997357637,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "621",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.02707216696580872,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "623",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.026405125041492283,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "624",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.026267207984346896,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 1.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 1.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "630",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.026351874985266477,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "638",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.026114167005289346,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  },
+  {
+   "puzzle_id": "656",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.025652582990005612,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 1.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 1.0
+   }
+  },
+  {
+   "puzzle_id": "652",
+   "solved": true,
+   "steps": 1,
+   "seconds": 0.026778791972901672,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 4.0,
+    "tier_yellow": 1.0,
+    "tier_green": 1.0,
+    "tier_blue": 1.0,
+    "tier_purple": 1.0
+   }
+  },
+  {
+   "puzzle_id": "662",
+   "solved": false,
+   "steps": 1,
+   "seconds": 0.025469459011219442,
+   "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.0,
+    "api_calls": 0,
+    "cached_latency_s": 0.0
+   },
+   "metrics": {
+    "groups_correct": 0.0,
+    "tier_yellow": 0.0,
+    "tier_green": 0.0,
+    "tier_blue": 0.0,
+    "tier_purple": 0.0
+   }
+  }
+ ]
+}

@@ -6,7 +6,7 @@ import numpy as np
 import pytest
 
 from src.common.evaluate import evaluate
-from src.common.llm import AnthropicJSONClient, LLMReply, cost_usd
+from src.common.llm import AnthropicJSONClient, LLMReply, ReplyCache, cost_usd
 from src.common.solver import Usage
 from src.connections.env import ConnectionsEnv, ConnectionsState, validate_partition
 from src.connections.probe import labels_matched, probe_summary, run_probe
@@ -44,7 +44,7 @@ def make_client(tmp_path, create):
     c = object.__new__(AnthropicJSONClient)
     c._anthropic = anthropic
     c._client = SimpleNamespace(messages=SimpleNamespace(create=create))
-    c.cache_dir = tmp_path
+    c.cache = ReplyCache(tmp_path)
     return c
 
 
@@ -143,6 +143,15 @@ def test_greedy_partition_falls_for_a_high_confidence_decoy():
     decoy = {"category": "decoy", "words": [w[0], w[1], w[2], w[4]], "confidence": 0.95}
     proposal, _ = build_partition(p.words, true_groups(p) + [decoy])
     assert frozenset(decoy["words"]) in {frozenset(g) for g in proposal.groups}  # greedy took it
+
+
+def test_last_group_by_elimination_is_not_counted_as_a_repair():
+    p = make_puzzle()
+    g = true_groups(p)
+    g[3]["words"] = g[3]["words"][:3]  # model gave only three words for one group
+    proposal, repaired = build_partition(p.words, g)
+    assert repaired == 0
+    assert {frozenset(x) for x in proposal.groups} == {x.words for x in p.groups}  # deduced correctly
 
 
 def test_llm_solver_solves_tracks_usage_and_metrics():
@@ -248,3 +257,76 @@ def test_probe_flags_recited_puzzles_and_not_guesses():
     assert all(r.control_matched == 0 for r in res)  # recalled labels don't match OTHER puzzles
     guessing = run_probe(Recall({}), "claude-haiku-5-5", ps)
     assert not any(r.flagged for r in guessing)
+
+
+# --- local model client ---------------------------------------------------------------------
+
+def test_extract_json_handles_think_blocks_prose_fences_and_junk():
+    from src.common.local_llm import extract_json
+
+    assert extract_json('{"a": 1}') == {"a": 1}
+    assert extract_json('<think>maybe {"x": 0}</think>\n```json\n{"a": [1, 2]}\n```') == {"a": [1, 2]}
+    assert extract_json('Sure! Here you go: {"a": {"b": 2}} Hope that helps') == {"a": {"b": 2}}
+    assert extract_json("no json here") is None
+    assert extract_json('{"a": 1') is None  # truncated
+    assert extract_json("[1, 2, 3]") is None  # arrays are not objects
+
+
+def make_local(tmp_path, outputs):
+    from src.common.local_llm import LocalJSONClient
+
+    c = LocalJSONClient(cache_dir=tmp_path)
+    queue = list(outputs)
+    c.generated = []
+
+    def fake_generate(name, messages):
+        c.generated.append(messages)
+        return queue.pop(0), 10, 5
+
+    c._generate = fake_generate
+    return c
+
+
+def test_local_client_parses_costs_nothing_and_caches(tmp_path):
+    c = make_local(tmp_path, ['{"a": 1}'])
+    first, second = call(c), call(c)
+    assert first.data == {"a": 1} and first.usage.cost_usd == 0.0 and first.usage.api_calls == 1
+    assert second.from_cache and len(c.generated) == 1
+    assert "JSON schema" in c.generated[0][0]["content"]  # schema is put in the prompt
+
+
+def test_local_client_retries_once_on_invalid_json_then_succeeds(tmp_path):
+    c = make_local(tmp_path, ["I think the answer is blue", '{"a": 2}'])
+    reply = call(c)
+    assert reply.data == {"a": 2} and len(c.generated) == 2
+    assert reply.usage.input_tokens == 20 and reply.usage.output_tokens == 10  # both attempts counted
+    assert c.generated[1][-1]["role"] == "user" and "not valid JSON" in c.generated[1][-1]["content"]
+
+
+def test_local_client_reports_failure_after_retry_and_does_not_cache(tmp_path):
+    c = make_local(tmp_path, ["nope", "still nope"])
+    reply = call(c)
+    assert reply.data is None and reply.failure == "invalid_json"
+    assert not list(tmp_path.glob("*.json"))
+
+
+def test_local_client_plugs_into_the_llm_solver(tmp_path):
+    p = make_puzzle()
+    good = json.dumps({"groups": true_groups(p)})
+    solver = LLMSolver(make_local(tmp_path, [good]), "mlx-community/Qwen3-8B-4bit")
+    (r,) = evaluate(solver, ConnectionsEnv(), [p])
+    assert r.solved and r.usage.cost_usd == 0.0
+
+
+def test_cached_replies_still_report_their_original_latency():
+    p = make_puzzle()
+
+    class Cached(FakeClient):
+        def complete_json(self, **kw):
+            r = super().complete_json(**kw)
+            return LLMReply(r.data, None, r.usage, 12.5, from_cache=True)
+
+    for solver in (LLMSolver(Cached({"groups": true_groups(p)}), "claude-haiku-5-5"),
+                   HybridSolver(Cached({"candidates": true_groups(p)}), "claude-haiku-5-5", alpha=0.0)):
+        (r,) = evaluate(solver, ConnectionsEnv(), [p])
+        assert r.seconds >= 12.5 and r.usage.cached_latency_s == 12.5

@@ -162,3 +162,13 @@ def test_dataset_loads_and_is_well_formed():
     first = next(p for p in puzzles if p.id == 1)
     assert first.date == "2023-06-12"
     assert len(first.words) == 16 and all(g.label for g in first.groups)
+
+
+def test_bootstrap_ci_brackets_the_mean_and_paired_identical_is_zero():
+    from src.connections.benchmark import bootstrap_ci
+
+    vals = [0, 1, 2, 3, 4] * 20
+    lo, hi = bootstrap_ci(vals)
+    assert lo < 2.0 < hi and hi - lo < 0.7
+    assert bootstrap_ci([0.0] * 30) == (0.0, 0.0)
+    assert bootstrap_ci([1.0, 2.0, 3.0], seed=1) == bootstrap_ci([1.0, 2.0, 3.0], seed=1)  # deterministic

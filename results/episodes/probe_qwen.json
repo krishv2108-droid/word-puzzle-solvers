@@ -1,0 +1,902 @@
+[
+ {
+  "puzzle_id": "2",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "12",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "14",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "15",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "17",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "19",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "24",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "34",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "38",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "40",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "42",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "47",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "60",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "62",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "64",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "65",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "71",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "76",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "83",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "85",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "92",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "94",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "95",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "96",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "97",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "98",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "100",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "102",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "104",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "108",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "112",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "119",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "120",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "128",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "134",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "143",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "144",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "146",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "150",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "151",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "154",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "175",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "182",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "190",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "192",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "194",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "195",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "196",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "201",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "210",
+  "matched": 0,
+  "control_matched": 0.2,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "213",
+  "matched": 0,
+  "control_matched": 0.2,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "223",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "226",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "227",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "228",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "230",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "248",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "255",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "251",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "250",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "254",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "258",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "264",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "269",
+  "matched": 0,
+  "control_matched": 0.2,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "272",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "284",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "285",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "287",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "288",
+  "matched": 0,
+  "control_matched": 0.2,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "294",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "301",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "307",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "303",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "298",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "321",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "318",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "325",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "333",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "332",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "334",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "335",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "348",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "353",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "360",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "358",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "357",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "364",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "365",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "379",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "386",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "376",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "378",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "395",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "401",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "414",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "422",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "427",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "437",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "448",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "441",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "451",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "450",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "453",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "458",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "473",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "486",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "487",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "471",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "474",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "499",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "482",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "512",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "520",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "521",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "528",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "530",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "529",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "505",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "531",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "537",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "532",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "541",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "546",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "551",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "557",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "563",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "559",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "565",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "577",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "579",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "588",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "584",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "585",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "590",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "573",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "593",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "592",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "596",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "594",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "599",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "601",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "604",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "621",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "623",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "624",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "630",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "638",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "656",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "652",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ },
+ {
+  "puzzle_id": "662",
+  "matched": 0,
+  "control_matched": 0.0,
+  "flagged": false
+ }
+]

@@ -78,8 +78,9 @@ def build_partition(board: Sequence[str], groups: list[dict]) -> tuple[Proposal,
     """Greedy-by-confidence strict partition from model groups; returns (proposal, #repaired).
 
     A model group is accepted only if it maps to exactly 4 distinct, still-unused board
-    words. Whatever is left is chunked in board order ("repaired") so the result is always a
-    valid partition and the failure is counted.
+    words. If 4 words remain they form the last group by elimination; if more remain they are
+    chunked in board order ("repaired") so the result is always a valid partition and the
+    failure is counted.
     """
     matcher = BoardMatcher(board)
     ranked = sorted(groups, key=lambda g: -float(g.get("confidence", 0) or 0))
@@ -99,7 +100,9 @@ def build_partition(board: Sequence[str], groups: list[dict]) -> tuple[Proposal,
             labels=tuple(a[1] for a in accepted),
             confidences=tuple(min(1.0, max(0.0, a[2])) for a in accepted),
         ),
-        len(leftover),
+        # exactly 4 leftovers is the fourth group by elimination, not a repair; more than 4 means
+        # several groups had to be guessed
+        len(leftover) if len(leftover) > 4 else 0,
     )
 
 
@@ -121,6 +124,8 @@ class LLMSolver(Solver[ConnectionsState, Proposal]):
         u = reply.usage
         for k in vars(u):
             setattr(self.usage, k, getattr(self.usage, k) + getattr(u, k))
+        if reply.from_cache:
+            self.usage.cached_latency_s += reply.latency_s
         proposal, repaired = build_partition(state.words, (reply.data or {}).get("groups", []))
         self._m = {
             "repaired_words": float(repaired),

@@ -55,6 +55,32 @@ class JSONClient(Protocol):
                       effort: str = "medium", max_tokens: int = 16000) -> LLMReply: ...
 
 
+class ReplyCache:
+    """On-disk cache of successful replies, keyed by the full request (shared by all clients)."""
+
+    def __init__(self, cache_dir: Path | None) -> None:
+        self.dir = cache_dir
+
+    def _path(self, req: dict) -> Path | None:
+        if not self.dir:
+            return None
+        return self.dir / f"{hashlib.sha256(json.dumps(req, sort_keys=True).encode()).hexdigest()}.json"
+
+    def get(self, req: dict) -> LLMReply | None:
+        path = self._path(req)
+        if path and path.exists():
+            hit = json.loads(path.read_text())
+            return LLMReply(hit["data"], None, Usage(**hit["usage"]), hit["latency_s"], True)
+        return None
+
+    def put(self, req: dict, reply: LLMReply) -> None:
+        path = self._path(req)
+        if path and reply.data is not None:
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_text(json.dumps(
+                {"data": reply.data, "usage": asdict(reply.usage), "latency_s": reply.latency_s}))
+
+
 class AnthropicJSONClient:
     def __init__(self, cache_dir: Path | None = CACHE_DIR, max_retries: int = 4) -> None:
         import anthropic
@@ -65,19 +91,14 @@ class AnthropicJSONClient:
             raise RuntimeError("ANTHROPIC_API_KEY is not set; add it to .env (see .env.example)")
         self._anthropic = anthropic
         self._client = anthropic.Anthropic(max_retries=max_retries)
-        self.cache_dir = cache_dir
-
-    def _key(self, **req) -> str:
-        return hashlib.sha256(json.dumps(req, sort_keys=True).encode()).hexdigest()
+        self.cache = ReplyCache(cache_dir)
 
     def complete_json(self, *, model: str, system: str, user: str, schema: dict,
                       effort: str = "medium", max_tokens: int = 16000) -> LLMReply:
         req = dict(model=model, system=system, user=user, schema=schema,
                    effort=effort, max_tokens=max_tokens)
-        path = self.cache_dir / f"{self._key(**req)}.json" if self.cache_dir else None
-        if path and path.exists():
-            hit = json.loads(path.read_text())
-            return LLMReply(hit["data"], None, Usage(**hit["usage"]), hit["latency_s"], True)
+        if (hit := self.cache.get(req)) is not None:
+            return hit
 
         start = time.perf_counter()
         try:
@@ -113,8 +134,6 @@ class AnthropicJSONClient:
             data = json.loads(text)
         except json.JSONDecodeError:
             return LLMReply(None, "invalid_json", usage, latency)
-        if path:
-            path.parent.mkdir(parents=True, exist_ok=True)
-            path.write_text(json.dumps(
-                {"data": data, "usage": asdict(usage), "latency_s": latency}))
-        return LLMReply(data, None, usage, latency)
+        reply = LLMReply(data, None, usage, latency)
+        self.cache.put(req, reply)
+        return reply

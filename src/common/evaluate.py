@@ -54,13 +54,16 @@ def run_episode(env: Environment, solver: Solver, puzzle) -> EpisodeResult:
     state = env.reset(puzzle)
     while not env.done:
         state = env.step(solver.next_action(state))
-    seconds = time.perf_counter() - start
+    usage = solver.usage.minus(before)
+    # A cache hit returns instantly; add back the latency it originally took so that timing
+    # is the same whether or not a reply was replayed.
+    seconds = time.perf_counter() - start + usage.cached_latency_s
     return EpisodeResult(
         puzzle_id=env.puzzle_id,
         solved=env.solved,
         steps=env.steps,
         seconds=seconds,
-        usage=solver.usage.minus(before),
+        usage=usage,
         metrics={**env.metrics(), **solver.metrics()},
     )
 

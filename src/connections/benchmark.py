@@ -3,6 +3,7 @@
     python -m src.connections.benchmark --approaches random minilm mpnet   # no API key needed
     python -m src.connections.benchmark --approaches haiku-llm sonnet-hybrid \
         --sample 150 --probe                                               # needs ANTHROPIC_API_KEY
+    python -m src.connections.benchmark --approaches qwen-llm qwen-hybrid  # local model, $0
     python -m src.connections.benchmark --report-only                      # rebuild tables
 
 Per-episode results are saved to results/episodes/ (puzzle ids and numbers only, no NYT
@@ -36,7 +37,15 @@ EPISODES_DIR = RESULTS_DIR / "episodes"
 METRIC_COLS = [("groups_correct", "Avg groups (of 4)", "num")] + [
     (f"tier_{t}", t.capitalize(), "pct") for t in TIERS
 ]
-MODELS = {"haiku": "claude-haiku-5-5", "sonnet": "claude-sonnet-5-5"}
+MODELS = {
+    "haiku": "claude-haiku-5-5",
+    "sonnet": "claude-sonnet-5-5",
+    "qwen": "mlx-community/Qwen3-8B-4bit",  # local, no reasoning mode
+    "qwent": "mlx-community/Qwen3-8B-4bit",  # local, reasoning mode on (slower)
+}
+DISPLAY = {"haiku": "haiku-5-5", "sonnet": "sonnet-5-5",
+           "qwen": "qwen3-8b local", "qwent": "qwen3-8b local, thinking"}
+LOCAL = {"qwen", "qwent"}
 EMBEDDERS: dict[str, EmbeddingModel] = {}
 
 
@@ -44,8 +53,11 @@ def embedder(name: str) -> EmbeddingModel:
     return EMBEDDERS.setdefault(name, EmbeddingModel(name))
 
 
-def make_solver(approach: str, client):
-    """Approach names: random | minilm | mpnet | {haiku,sonnet}-{llm,hybrid,hybrid-noemb}."""
+def make_solver(approach: str, client_for):
+    """Approach names: random | minilm | mpnet | {haiku,sonnet,qwen,qwent}-{llm,hybrid,hybrid-noemb}.
+
+    `client_for(model_key)` builds the JSON client lazily so non-LLM runs need no key or model.
+    """
     if approach == "random":
         return RandomSolver(seed=0)
     if approach == "minilm":
@@ -56,14 +68,17 @@ def make_solver(approach: str, client):
     from .solvers.hybrid import HybridSolver
     from .solvers.llm import LLMSolver
 
-    model = MODELS[model_key]
+    model, client = MODELS[model_key], client_for(model_key)
     if kind == "llm":
-        return LLMSolver(client, model)
-    if kind == "hybrid":
-        return HybridSolver(client, model, embedder=embedder("all-mpnet-base-v2"))
-    if kind == "hybrid-noemb":
-        return HybridSolver(client, model, alpha=0.0)
-    raise ValueError(f"unknown approach {approach!r}")
+        solver, tag = LLMSolver(client, model), "llm"
+    elif kind == "hybrid":
+        solver, tag = HybridSolver(client, model, embedder=embedder("all-mpnet-base-v2")), "hybrid"
+    elif kind == "hybrid-noemb":
+        solver, tag = HybridSolver(client, model, alpha=0.0), "hybrid, no embeddings"
+    else:
+        raise ValueError(f"unknown approach {approach!r}")
+    solver.name = f"{tag} ({DISPLAY[model_key]})"
+    return solver
 
 
 def is_llm(approach: str) -> bool:
@@ -100,6 +115,42 @@ def load_probe(model_key: str) -> dict[str, ProbeResult] | None:
     return {r["puzzle_id"]: ProbeResult(**r) for r in json.loads(path.read_text())}
 
 
+
+# --- uncertainty ---------------------------------------------------------------------
+
+def bootstrap_ci(values, n_boot: int = 10000, seed: int = 0) -> tuple[float, float]:
+    """95% percentile-bootstrap CI for the mean of per-puzzle `values`."""
+    import numpy as np
+
+    v = np.asarray(values, dtype=float)
+    idx = np.random.default_rng(seed).integers(0, len(v), size=(n_boot, len(v)))
+    lo, hi = np.percentile(v[idx].mean(axis=1), [2.5, 97.5])
+    return float(lo), float(hi)
+
+
+def uncertainty_section(ids: list[str], loaded: dict) -> str:
+    """CIs per approach and PAIRED differences (same puzzles), since puzzle difficulty is shared."""
+    per = {a: {k: [loaded[a][1][i].metrics[k] for i in ids] for k in ("groups_correct",)}
+           | {"solved": [float(loaded[a][1][i].solved) for i in ids]} for a in loaded}
+    rows = ["| Approach | Avg groups (of 4) | 95% CI | Fully solved | 95% CI |", "|---|---|---|---|---|"]
+    for a in loaded:
+        g, f = per[a]["groups_correct"], per[a]["solved"]
+        (gl, gh), (fl, fh) = bootstrap_ci(g), bootstrap_ci(f)
+        rows.append(f"| {loaded[a][0]} | {sum(g)/len(g):.2f} | {gl:.2f} to {gh:.2f} | "
+                    f"{sum(f)/len(f):.1%} | {fl:.1%} to {fh:.1%} |")
+    pairs = [(x, y) for x, y in (("qwen-hybrid", "mpnet"), ("qwen-hybrid", "qwen-llm"),
+                                 ("qwen-hybrid", "qwen-hybrid-noemb"), ("mpnet", "qwen-llm"),
+                                 ("mpnet", "minilm")) if x in loaded and y in loaded]
+    diff = ["", "Paired differences in average groups (A minus B, same puzzles):", "",
+            "| A | B | A - B | 95% CI | Significant at 95%? |", "|---|---|---|---|---|"]
+    for x, y in pairs:
+        d = [a - b for a, b in zip(per[x]["groups_correct"], per[y]["groups_correct"])]
+        lo, hi = bootstrap_ci(d)
+        diff.append(f"| {loaded[x][0]} | {loaded[y][0]} | {sum(d)/len(d):+.2f} | {lo:+.2f} to {hi:+.2f} | "
+                    f"{'yes' if lo > 0 or hi < 0 else 'no'} |")
+    return "\n".join(["### Statistical uncertainty", f"95% bootstrap confidence intervals, n={len(ids)} puzzles.", "",
+                      *rows, *diff, ""])
+
 # --- reporting -----------------------------------------------------------------------
 
 def choose_subset(puzzles: list[Puzzle], sample: int | None, seed: int, limit: int | None) -> list[Puzzle]:
@@ -128,6 +179,9 @@ def build_report(subset: list[Puzzle], approaches: list[str]) -> tuple[str, dict
                                         show_steps=False, show_histograms=False, show_cost=show_cost))
         data[title] = [s.to_dict() for s in sums]
 
+    if loaded:
+        sections.insert(1, uncertainty_section(ids, loaded))
+
     probe_lines = []
     for mk in MODELS:
         probe = load_probe(mk)
@@ -137,7 +191,7 @@ def build_report(subset: list[Puzzle], approaches: list[str]) -> tuple[str, dict
         pr = [probe[i] for i in ids if i in probe]
         ps = probe_summary(pr)
         probe_lines.append(
-            f"- **{MODELS[mk]}** recalls {ps['mean_labels_matched']:.2f} of 4 category names from a "
+            f"- **{DISPLAY[mk]}** recalls {ps['mean_labels_matched']:.2f} of 4 category names from a "
             f"puzzle's number and date alone (chance control: {ps['mean_labels_matched_control']:.2f}); "
             f"{ps['flagged_rate']:.0%} of puzzles flagged likely-seen (>=2 of 4 matched).")
         rows = []
@@ -147,14 +201,15 @@ def build_report(subset: list[Puzzle], approaches: list[str]) -> tuple[str, dict
                 if sl:
                     rows.append(summarize(f"{loaded[a][0]} - {label}", [loaded[a][1][i] for i in sl]))
         if rows:
-            sections.append(markdown_report(f"Split by memorization flag ({MODELS[mk]} probe)", rows,
+            sections.append(markdown_report(f"Split by memorization flag ({DISPLAY[mk]} probe)", rows,
                                             solve_label="Fully solved", metric_cols=METRIC_COLS,
                                             show_steps=False, show_histograms=False))
             data[f"flag split {mk}"] = [s.to_dict() for s in rows]
     header = [
         "> **Upper bound.** Every puzzle here predates the models' training cutoffs, so LLM scores "
         "are an upper bound on performance on genuinely new puzzles. No clean post-cutoff holdout "
-        "exists in this project.",
+        "exists in this project. The memorization probe below only detects puzzles a model can recite "
+        "from a date; finding none does not prove a puzzle is unseen.",
         "",
     ]
     if probe_lines:
@@ -179,12 +234,22 @@ def main(argv: list[str] | None = None) -> int:
     print(f"{len(subset)} puzzles", file=sys.stderr)
 
     if not args.report_only:
-        client = None
-        if any(is_llm(a) for a in args.approaches) or args.probe:
-            from ..common.llm import AnthropicJSONClient
-            client = AnthropicJSONClient()
+        clients: dict[str, object] = {}
+
+        def client_for(model_key: str):
+            """One client per backend; built lazily so a missing key only matters when used."""
+            backend = ("local-thinking" if model_key == "qwent" else "local") if model_key in LOCAL else "api"
+            if backend not in clients:
+                if backend == "api":
+                    from ..common.llm import AnthropicJSONClient
+                    clients[backend] = AnthropicJSONClient()
+                else:
+                    from ..common.local_llm import LocalJSONClient
+                    clients[backend] = LocalJSONClient(thinking=backend == "local-thinking")
+            return clients[backend]
+
         for approach in args.approaches:
-            solver = make_solver(approach, client)
+            solver = make_solver(approach, client_for)
             results = evaluate(solver, ConnectionsEnv(), subset)
             save_episodes(approach, solver.name, results)
             s = summarize(solver.name, results)
@@ -192,7 +257,7 @@ def main(argv: list[str] | None = None) -> int:
                   f"  ${s.cost_usd_per_puzzle:.4f}/puzzle", file=sys.stderr)
         if args.probe:
             for mk in sorted({a.split('-')[0] for a in args.approaches if is_llm(a)}):
-                save_probe(mk, run_probe(client, MODELS[mk], subset))
+                save_probe(mk, run_probe(client_for(mk), MODELS[mk], subset))
                 print(f"probe done: {mk}", file=sys.stderr)
 
     if not args.limit:

@@ -25,6 +25,7 @@ class Usage:
     cache_read_tokens: int = 0
     cost_usd: float = 0.0
     api_calls: int = 0
+    cached_latency_s: float = 0.0  # original latency of replies replayed from the disk cache
 
     def snapshot(self) -> "Usage":
         return Usage(**vars(self))

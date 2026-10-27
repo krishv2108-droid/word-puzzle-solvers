@@ -96,6 +96,8 @@ class HybridSolver(Solver[ConnectionsState, Proposal]):
         )
         for k in vars(reply.usage):
             setattr(self.usage, k, getattr(self.usage, k) + getattr(reply.usage, k))
+        if reply.from_cache:
+            self.usage.cached_latency_s += reply.latency_s
         candidates = (reply.data or {}).get("candidates", [])
         llm_scores, valid = self.candidate_scores(state.words, candidates)
 

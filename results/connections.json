@@ -1,0 +1,438 @@
+{
+  "All 150 puzzles": [
+    {
+      "name": "random",
+      "n": 150,
+      "solve_rate": 0.0,
+      "solved_within": {},
+      "mean_steps": 1.0,
+      "mean_steps_solved": NaN,
+      "worst_steps": 1,
+      "histogram": {},
+      "unsolved": 150,
+      "ms_per_puzzle_mean": 0.008372510395323237,
+      "ms_per_puzzle_p95": 0.00933394767343998,
+      "ms_per_puzzle_max": 0.27195800794288516,
+      "cost_usd_total": 0.0,
+      "cost_usd_per_puzzle": 0.0,
+      "input_tokens_per_puzzle": 0.0,
+      "output_tokens_per_puzzle": 0.0,
+      "mean_metrics": {
+        "groups_correct": 0.006666666666666667,
+        "tier_blue": 0.0,
+        "tier_green": 0.006666666666666667,
+        "tier_purple": 0.0,
+        "tier_yellow": 0.0
+      }
+    },
+    {
+      "name": "embedding (all-MiniLM-L6-v2)",
+      "n": 150,
+      "solve_rate": 0.013333333333333334,
+      "solved_within": {},
+      "mean_steps": 1.0,
+      "mean_steps_solved": 1.0,
+      "worst_steps": 1,
+      "histogram": {
+        "1": 2
+      },
+      "unsolved": 148,
+      "ms_per_puzzle_mean": 69.42076645713921,
+      "ms_per_puzzle_p95": 29.7813750221394,
+      "ms_per_puzzle_max": 6359.911458042916,
+      "cost_usd_total": 0.0,
+      "cost_usd_per_puzzle": 0.0,
+      "input_tokens_per_puzzle": 0.0,
+      "output_tokens_per_puzzle": 0.0,
+      "mean_metrics": {
+        "groups_correct": 0.3933333333333333,
+        "tier_blue": 0.07333333333333333,
+        "tier_green": 0.12,
+        "tier_purple": 0.05333333333333334,
+        "tier_yellow": 0.14666666666666667
+      }
+    },
+    {
+      "name": "embedding (all-mpnet-base-v2)",
+      "n": 150,
+      "solve_rate": 0.02666666666666667,
+      "solved_within": {},
+      "mean_steps": 1.0,
+      "mean_steps_solved": 1.0,
+      "worst_steps": 1,
+      "histogram": {
+        "1": 4
+      },
+      "unsolved": 146,
+      "ms_per_puzzle_mean": 50.249020039724805,
+      "ms_per_puzzle_p95": 50.14366703107953,
+      "ms_per_puzzle_max": 880.1455830107443,
+      "cost_usd_total": 0.0,
+      "cost_usd_per_puzzle": 0.0,
+      "input_tokens_per_puzzle": 0.0,
+      "output_tokens_per_puzzle": 0.0,
+      "mean_metrics": {
+        "groups_correct": 0.5866666666666667,
+        "tier_blue": 0.13333333333333333,
+        "tier_green": 0.18,
+        "tier_purple": 0.06666666666666667,
+        "tier_yellow": 0.20666666666666667
+      }
+    },
+    {
+      "name": "llm (qwen3-8b local)",
+      "n": 150,
+      "solve_rate": 0.02,
+      "solved_within": {},
+      "mean_steps": 1.0,
+      "mean_steps_solved": 1.0,
+      "worst_steps": 1,
+      "histogram": {
+        "1": 3
+      },
+      "unsolved": 147,
+      "ms_per_puzzle_mean": 9716.098760854607,
+      "ms_per_puzzle_p95": 11201.147333020344,
+      "ms_per_puzzle_max": 13013.36695899954,
+      "cost_usd_total": 0.0,
+      "cost_usd_per_puzzle": 0.0,
+      "input_tokens_per_puzzle": 362.74,
+      "output_tokens_per_puzzle": 195.48,
+      "mean_metrics": {
+        "groups_correct": 0.4266666666666667,
+        "llm_cache_hit": 0.03333333333333333,
+        "llm_failure": 0.0,
+        "repaired_words": 2.0,
+        "tier_blue": 0.06666666666666667,
+        "tier_green": 0.11333333333333333,
+        "tier_purple": 0.05333333333333334,
+        "tier_yellow": 0.19333333333333333
+      }
+    },
+    {
+      "name": "hybrid, no embeddings (qwen3-8b local)",
+      "n": 150,
+      "solve_rate": 0.013333333333333334,
+      "solved_within": {},
+      "mean_steps": 1.0,
+      "mean_steps_solved": 1.0,
+      "worst_steps": 1,
+      "histogram": {
+        "1": 2
+      },
+      "unsolved": 148,
+      "ms_per_puzzle_mean": 25897.48926641575,
+      "ms_per_puzzle_p95": 53552.43637500098,
+      "ms_per_puzzle_max": 62466.61979198689,
+      "cost_usd_total": 0.0,
+      "cost_usd_per_puzzle": 0.0,
+      "input_tokens_per_puzzle": 377.74,
+      "output_tokens_per_puzzle": 560.82,
+      "mean_metrics": {
+        "candidates_valid": 7.9,
+        "groups_correct": 0.36,
+        "groups_from_llm": 2.4,
+        "llm_cache_hit": 0.02666666666666667,
+        "llm_failure": 0.0,
+        "tier_blue": 0.08666666666666667,
+        "tier_green": 0.08666666666666667,
+        "tier_purple": 0.02666666666666667,
+        "tier_yellow": 0.16
+      }
+    },
+    {
+      "name": "hybrid (qwen3-8b local)",
+      "n": 150,
+      "solve_rate": 0.03333333333333333,
+      "solved_within": {},
+      "mean_steps": 1.0,
+      "mean_steps_solved": 1.0,
+      "worst_steps": 1,
+      "histogram": {
+        "1": 5
+      },
+      "unsolved": 145,
+      "ms_per_puzzle_mean": 25879.346943862427,
+      "ms_per_puzzle_p95": 53550.41629093466,
+      "ms_per_puzzle_max": 62459.46125005139,
+      "cost_usd_total": 0.0,
+      "cost_usd_per_puzzle": 0.0,
+      "input_tokens_per_puzzle": 377.74,
+      "output_tokens_per_puzzle": 560.82,
+      "mean_metrics": {
+        "candidates_valid": 7.9,
+        "groups_correct": 0.5533333333333333,
+        "groups_from_llm": 2.4,
+        "llm_cache_hit": 1.0,
+        "llm_failure": 0.0,
+        "tier_blue": 0.14,
+        "tier_green": 0.16,
+        "tier_purple": 0.06,
+        "tier_yellow": 0.19333333333333333
+      }
+    }
+  ],
+  "Most recent third (2024-08-11 to 2025-02-28, n=50)": [
+    {
+      "name": "random",
+      "n": 50,
+      "solve_rate": 0.0,
+      "solved_within": {},
+      "mean_steps": 1.0,
+      "mean_steps_solved": NaN,
+      "worst_steps": 1,
+      "histogram": {},
+      "unsolved": 50,
+      "ms_per_puzzle_mean": 0.006037479033693671,
+      "ms_per_puzzle_p95": 0.007166003342717886,
+      "ms_per_puzzle_max": 0.011499971151351929,
+      "cost_usd_total": 0.0,
+      "cost_usd_per_puzzle": 0.0,
+      "input_tokens_per_puzzle": 0.0,
+      "output_tokens_per_puzzle": 0.0,
+      "mean_metrics": {
+        "groups_correct": 0.0,
+        "tier_blue": 0.0,
+        "tier_green": 0.0,
+        "tier_purple": 0.0,
+        "tier_yellow": 0.0
+      }
+    },
+    {
+      "name": "embedding (all-MiniLM-L6-v2)",
+      "n": 50,
+      "solve_rate": 0.04,
+      "solved_within": {},
+      "mean_steps": 1.0,
+      "mean_steps_solved": 1.0,
+      "worst_steps": 1,
+      "histogram": {
+        "1": 2
+      },
+      "unsolved": 48,
+      "ms_per_puzzle_mean": 26.63269342505373,
+      "ms_per_puzzle_p95": 28.183499991428107,
+      "ms_per_puzzle_max": 31.243041972629726,
+      "cost_usd_total": 0.0,
+      "cost_usd_per_puzzle": 0.0,
+      "input_tokens_per_puzzle": 0.0,
+      "output_tokens_per_puzzle": 0.0,
+      "mean_metrics": {
+        "groups_correct": 0.5,
+        "tier_blue": 0.14,
+        "tier_green": 0.12,
+        "tier_purple": 0.06,
+        "tier_yellow": 0.18
+      }
+    },
+    {
+      "name": "embedding (all-mpnet-base-v2)",
+      "n": 50,
+      "solve_rate": 0.02,
+      "solved_within": {},
+      "mean_steps": 1.0,
+      "mean_steps_solved": 1.0,
+      "worst_steps": 1,
+      "histogram": {
+        "1": 1
+      },
+      "unsolved": 49,
+      "ms_per_puzzle_mean": 43.375087577151135,
+      "ms_per_puzzle_p95": 51.70283396728337,
+      "ms_per_puzzle_max": 53.50095801986754,
+      "cost_usd_total": 0.0,
+      "cost_usd_per_puzzle": 0.0,
+      "input_tokens_per_puzzle": 0.0,
+      "output_tokens_per_puzzle": 0.0,
+      "mean_metrics": {
+        "groups_correct": 0.58,
+        "tier_blue": 0.16,
+        "tier_green": 0.16,
+        "tier_purple": 0.06,
+        "tier_yellow": 0.2
+      }
+    },
+    {
+      "name": "llm (qwen3-8b local)",
+      "n": 50,
+      "solve_rate": 0.0,
+      "solved_within": {},
+      "mean_steps": 1.0,
+      "mean_steps_solved": NaN,
+      "worst_steps": 1,
+      "histogram": {},
+      "unsolved": 50,
+      "ms_per_puzzle_mean": 9231.996007483685,
+      "ms_per_puzzle_p95": 10832.245750003494,
+      "ms_per_puzzle_max": 11072.348084009718,
+      "cost_usd_total": 0.0,
+      "cost_usd_per_puzzle": 0.0,
+      "input_tokens_per_puzzle": 363.62,
+      "output_tokens_per_puzzle": 199.1,
+      "mean_metrics": {
+        "groups_correct": 0.22,
+        "llm_cache_hit": 0.06,
+        "llm_failure": 0.0,
+        "repaired_words": 3.28,
+        "tier_blue": 0.02,
+        "tier_green": 0.1,
+        "tier_purple": 0.0,
+        "tier_yellow": 0.1
+      }
+    },
+    {
+      "name": "hybrid, no embeddings (qwen3-8b local)",
+      "n": 50,
+      "solve_rate": 0.0,
+      "solved_within": {},
+      "mean_steps": 1.0,
+      "mean_steps_solved": NaN,
+      "worst_steps": 1,
+      "histogram": {},
+      "unsolved": 50,
+      "ms_per_puzzle_mean": 22054.353830764303,
+      "ms_per_puzzle_p95": 31381.22837501578,
+      "ms_per_puzzle_max": 32467.95783302514,
+      "cost_usd_total": 0.0,
+      "cost_usd_per_puzzle": 0.0,
+      "input_tokens_per_puzzle": 378.62,
+      "output_tokens_per_puzzle": 556.48,
+      "mean_metrics": {
+        "candidates_valid": 6.42,
+        "groups_correct": 0.18,
+        "groups_from_llm": 1.96,
+        "llm_cache_hit": 0.06,
+        "llm_failure": 0.0,
+        "tier_blue": 0.06,
+        "tier_green": 0.04,
+        "tier_purple": 0.0,
+        "tier_yellow": 0.08
+      }
+    },
+    {
+      "name": "hybrid (qwen3-8b local)",
+      "n": 50,
+      "solve_rate": 0.02,
+      "solved_within": {},
+      "mean_steps": 1.0,
+      "mean_steps_solved": 1.0,
+      "worst_steps": 1,
+      "histogram": {
+        "1": 1
+      },
+      "unsolved": 49,
+      "ms_per_puzzle_mean": 22028.71879336657,
+      "ms_per_puzzle_p95": 31352.00600104872,
+      "ms_per_puzzle_max": 32468.329374096356,
+      "cost_usd_total": 0.0,
+      "cost_usd_per_puzzle": 0.0,
+      "input_tokens_per_puzzle": 378.62,
+      "output_tokens_per_puzzle": 556.48,
+      "mean_metrics": {
+        "candidates_valid": 6.42,
+        "groups_correct": 0.4,
+        "groups_from_llm": 1.96,
+        "llm_cache_hit": 1.0,
+        "llm_failure": 0.0,
+        "tier_blue": 0.14,
+        "tier_green": 0.08,
+        "tier_purple": 0.04,
+        "tier_yellow": 0.14
+      }
+    }
+  ],
+  "flag split qwen": [
+    {
+      "name": "llm (qwen3-8b local) - not flagged",
+      "n": 150,
+      "solve_rate": 0.02,
+      "solved_within": {},
+      "mean_steps": 1.0,
+      "mean_steps_solved": 1.0,
+      "worst_steps": 1,
+      "histogram": {
+        "1": 3
+      },
+      "unsolved": 147,
+      "ms_per_puzzle_mean": 9716.098760854607,
+      "ms_per_puzzle_p95": 11201.147333020344,
+      "ms_per_puzzle_max": 13013.36695899954,
+      "cost_usd_total": 0.0,
+      "cost_usd_per_puzzle": 0.0,
+      "input_tokens_per_puzzle": 362.74,
+      "output_tokens_per_puzzle": 195.48,
+      "mean_metrics": {
+        "groups_correct": 0.4266666666666667,
+        "llm_cache_hit": 0.03333333333333333,
+        "llm_failure": 0.0,
+        "repaired_words": 2.0,
+        "tier_blue": 0.06666666666666667,
+        "tier_green": 0.11333333333333333,
+        "tier_purple": 0.05333333333333334,
+        "tier_yellow": 0.19333333333333333
+      }
+    },
+    {
+      "name": "hybrid, no embeddings (qwen3-8b local) - not flagged",
+      "n": 150,
+      "solve_rate": 0.013333333333333334,
+      "solved_within": {},
+      "mean_steps": 1.0,
+      "mean_steps_solved": 1.0,
+      "worst_steps": 1,
+      "histogram": {
+        "1": 2
+      },
+      "unsolved": 148,
+      "ms_per_puzzle_mean": 25897.48926641575,
+      "ms_per_puzzle_p95": 53552.43637500098,
+      "ms_per_puzzle_max": 62466.61979198689,
+      "cost_usd_total": 0.0,
+      "cost_usd_per_puzzle": 0.0,
+      "input_tokens_per_puzzle": 377.74,
+      "output_tokens_per_puzzle": 560.82,
+      "mean_metrics": {
+        "candidates_valid": 7.9,
+        "groups_correct": 0.36,
+        "groups_from_llm": 2.4,
+        "llm_cache_hit": 0.02666666666666667,
+        "llm_failure": 0.0,
+        "tier_blue": 0.08666666666666667,
+        "tier_green": 0.08666666666666667,
+        "tier_purple": 0.02666666666666667,
+        "tier_yellow": 0.16
+      }
+    },
+    {
+      "name": "hybrid (qwen3-8b local) - not flagged",
+      "n": 150,
+      "solve_rate": 0.03333333333333333,
+      "solved_within": {},
+      "mean_steps": 1.0,
+      "mean_steps_solved": 1.0,
+      "worst_steps": 1,
+      "histogram": {
+        "1": 5
+      },
+      "unsolved": 145,
+      "ms_per_puzzle_mean": 25879.346943862427,
+      "ms_per_puzzle_p95": 53550.41629093466,
+      "ms_per_puzzle_max": 62459.46125005139,
+      "cost_usd_total": 0.0,
+      "cost_usd_per_puzzle": 0.0,
+      "input_tokens_per_puzzle": 377.74,
+      "output_tokens_per_puzzle": 560.82,
+      "mean_metrics": {
+        "candidates_valid": 7.9,
+        "groups_correct": 0.5533333333333333,
+        "groups_from_llm": 2.4,
+        "llm_cache_hit": 1.0,
+        "llm_failure": 0.0,
+        "tier_blue": 0.14,
+        "tier_green": 0.16,
+        "tier_purple": 0.06,
+        "tier_yellow": 0.19333333333333333
+      }
+    }
+  ]
+}
