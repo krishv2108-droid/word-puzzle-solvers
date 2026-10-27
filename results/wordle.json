@@ -1,0 +1,177 @@
+[
+  {
+    "name": "frequency",
+    "n": 2315,
+    "solve_rate": 1.0,
+    "solved_within": {
+      "6": 0.9935205183585313
+    },
+    "mean_steps": 3.6224622030237583,
+    "mean_steps_solved": 3.6224622030237583,
+    "worst_steps": 9,
+    "histogram": {
+      "1": 1,
+      "2": 132,
+      "3": 955,
+      "4": 957,
+      "5": 214,
+      "6": 41,
+      "7": 10,
+      "8": 3,
+      "9": 2
+    },
+    "unsolved": 0,
+    "ms_per_puzzle_mean": 0.6564709829361647,
+    "ms_per_puzzle_p95": 0.7355419802479446,
+    "ms_per_puzzle_max": 1.1285830405540764,
+    "cost_usd_total": 0.0,
+    "cost_usd_per_puzzle": 0.0,
+    "input_tokens_per_puzzle": 0.0,
+    "output_tokens_per_puzzle": 0.0,
+    "mean_metrics": {}
+  },
+  {
+    "name": "entropy",
+    "n": 2315,
+    "solve_rate": 1.0,
+    "solved_within": {
+      "6": 1.0
+    },
+    "mean_steps": 3.464362850971922,
+    "mean_steps_solved": 3.464362850971922,
+    "worst_steps": 6,
+    "histogram": {
+      "2": 44,
+      "3": 1217,
+      "4": 990,
+      "5": 63,
+      "6": 1
+    },
+    "unsolved": 0,
+    "ms_per_puzzle_mean": 18.186107248326334,
+    "ms_per_puzzle_p95": 29.393708042334765,
+    "ms_per_puzzle_max": 48.17458300385624,
+    "cost_usd_total": 0.0,
+    "cost_usd_per_puzzle": 0.0,
+    "input_tokens_per_puzzle": 0.0,
+    "output_tokens_per_puzzle": 0.0,
+    "mean_metrics": {}
+  },
+  {
+    "name": "minimax",
+    "n": 2315,
+    "solve_rate": 1.0,
+    "solved_within": {
+      "6": 1.0
+    },
+    "mean_steps": 3.514038876889849,
+    "mean_steps_solved": 3.514038876889849,
+    "worst_steps": 5,
+    "histogram": {
+      "1": 1,
+      "2": 59,
+      "3": 1065,
+      "4": 1129,
+      "5": 61
+    },
+    "unsolved": 0,
+    "ms_per_puzzle_mean": 18.976281590600845,
+    "ms_per_puzzle_p95": 29.272499959915876,
+    "ms_per_puzzle_max": 42.970667011104524,
+    "cost_usd_total": 0.0,
+    "cost_usd_per_puzzle": 0.0,
+    "input_tokens_per_puzzle": 0.0,
+    "output_tokens_per_puzzle": 0.0,
+    "mean_metrics": {}
+  },
+  {
+    "name": "frequency (hard)",
+    "n": 2315,
+    "solve_rate": 1.0,
+    "solved_within": {
+      "6": 0.9935205183585313
+    },
+    "mean_steps": 3.6224622030237583,
+    "mean_steps_solved": 3.6224622030237583,
+    "worst_steps": 9,
+    "histogram": {
+      "1": 1,
+      "2": 132,
+      "3": 955,
+      "4": 957,
+      "5": 214,
+      "6": 41,
+      "7": 10,
+      "8": 3,
+      "9": 2
+    },
+    "unsolved": 0,
+    "ms_per_puzzle_mean": 0.6679291368490307,
+    "ms_per_puzzle_p95": 0.7531670271418989,
+    "ms_per_puzzle_max": 1.0727090411819518,
+    "cost_usd_total": 0.0,
+    "cost_usd_per_puzzle": 0.0,
+    "input_tokens_per_puzzle": 0.0,
+    "output_tokens_per_puzzle": 0.0,
+    "mean_metrics": {}
+  },
+  {
+    "name": "entropy (hard)",
+    "n": 2315,
+    "solve_rate": 1.0,
+    "solved_within": {
+      "6": 0.9969762419006479
+    },
+    "mean_steps": 3.602159827213823,
+    "mean_steps_solved": 3.602159827213823,
+    "worst_steps": 8,
+    "histogram": {
+      "2": 79,
+      "3": 1041,
+      "4": 969,
+      "5": 183,
+      "6": 36,
+      "7": 5,
+      "8": 2
+    },
+    "unsolved": 0,
+    "ms_per_puzzle_mean": 3.861534167116319,
+    "ms_per_puzzle_p95": 18.13745900290087,
+    "ms_per_puzzle_max": 33.17833301844075,
+    "cost_usd_total": 0.0,
+    "cost_usd_per_puzzle": 0.0,
+    "input_tokens_per_puzzle": 0.0,
+    "output_tokens_per_puzzle": 0.0,
+    "mean_metrics": {}
+  },
+  {
+    "name": "minimax (hard)",
+    "n": 2315,
+    "solve_rate": 1.0,
+    "solved_within": {
+      "6": 0.994816414686825
+    },
+    "mean_steps": 3.6514038876889847,
+    "mean_steps_solved": 3.6514038876889847,
+    "worst_steps": 8,
+    "histogram": {
+      "1": 1,
+      "2": 97,
+      "3": 931,
+      "4": 1031,
+      "5": 202,
+      "6": 41,
+      "7": 11,
+      "8": 1
+    },
+    "unsolved": 0,
+    "ms_per_puzzle_mean": 3.95085876178978,
+    "ms_per_puzzle_p95": 17.71024998743087,
+    "ms_per_puzzle_max": 29.430666007101536,
+    "cost_usd_total": 0.0,
+    "cost_usd_per_puzzle": 0.0,
+    "input_tokens_per_puzzle": 0.0,
+    "output_tokens_per_puzzle": 0.0,
+    "mean_metrics": {}
+  }
+]
