@@ -162,6 +162,16 @@ def choose_subset(puzzles: list[Puzzle], sample: int | None, seed: int, limit: i
     return puzzles
 
 
+TEST_SAMPLE, TEST_SEED = 150, 0
+
+
+def split_test_dev(puzzles: list[Puzzle]) -> tuple[list[Puzzle], list[Puzzle]]:
+    """TEST = the fixed 150-puzzle reporting sample (never tuned on); DEV = every other puzzle."""
+    test = choose_subset(puzzles, TEST_SAMPLE, TEST_SEED, None)
+    test_ids = {p.id for p in test}
+    return test, [p for p in puzzles if p.id not in test_ids]
+
+
 def build_report(subset: list[Puzzle], approaches: list[str]) -> tuple[str, dict]:
     ids = [str(p.id) for p in subset]
     loaded = {a: load_episodes(a) for a in approaches}
@@ -225,12 +235,22 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--sample", type=int, help="seeded random subset of N puzzles")
     ap.add_argument("--seed", type=int, default=0)
     ap.add_argument("--limit", type=int, help="first N puzzles by date (smoke test)")
+    ap.add_argument("--dev", type=int, help="evaluate on N random DEV puzzles (disjoint from the test sample)")
+    ap.add_argument("--episodes-dir", type=Path, help="where per-episode results go (default results/episodes)")
     ap.add_argument("--probe", action="store_true", help="run the memorization probe for LLM models used")
     ap.add_argument("--report-only", action="store_true")
     ap.add_argument("--out-name", default="connections", help="results/<name>.md|json")
     args = ap.parse_args(argv)
 
-    subset = choose_subset(load_puzzles(), args.sample, args.seed, args.limit)
+    global EPISODES_DIR
+    if args.episodes_dir:
+        EPISODES_DIR = args.episodes_dir
+    all_puzzles = load_puzzles()
+    if args.dev:
+        _, dev = split_test_dev(all_puzzles)
+        subset = choose_subset(dev, args.dev, args.seed, None)
+    else:
+        subset = choose_subset(all_puzzles, args.sample, args.seed, args.limit)
     print(f"{len(subset)} puzzles", file=sys.stderr)
 
     if not args.report_only:

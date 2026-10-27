@@ -1,6 +1,8 @@
 """Non-LLM Connections baselines: a random floor and embedding similarity + exact search."""
 from __future__ import annotations
 
+from pathlib import Path
+
 import numpy as np
 
 from ...common.solver import Solver
@@ -23,13 +25,21 @@ class RandomSolver(Solver[ConnectionsState, Proposal]):
         return Proposal(tuple(tuple(words[i] for i in order[k : k + 4]) for k in range(0, 16, 4)))
 
 
-class EmbeddingModel:
-    """Sentence-transformer wrapper that caches one unit vector per distinct word."""
+EMB_CACHE_DIR = Path(__file__).resolve().parents[3] / "data" / "cache"
 
-    def __init__(self, model_name: str) -> None:
+
+class EmbeddingModel:
+    """Sentence-transformer wrapper that caches one unit vector per distinct word (in memory,
+    and on disk so repeated experiments do not re-encode the vocabulary)."""
+
+    def __init__(self, model_name: str, cache_dir: Path | None = EMB_CACHE_DIR) -> None:
         self.model_name = model_name
         self._model = None
         self._cache: dict[str, np.ndarray] = {}
+        self._path = cache_dir / f"emb_{model_name.replace('/', '_')}.npz" if cache_dir else None
+        if self._path and self._path.exists():
+            z = np.load(self._path, allow_pickle=False)
+            self._cache = dict(zip(z["words"].tolist(), z["vecs"]))
 
     def vectors(self, words) -> np.ndarray:
         missing = [w for w in dict.fromkeys(words) if w not in self._cache]
@@ -42,7 +52,13 @@ class EmbeddingModel:
                 [w.lower() for w in missing], normalize_embeddings=True, show_progress_bar=False
             )
             self._cache.update(zip(missing, vecs))
+            self._save()
         return np.stack([self._cache[w] for w in words])
+
+    def _save(self) -> None:
+        if self._path:
+            self._path.parent.mkdir(parents=True, exist_ok=True)
+            np.savez(self._path, words=np.array(list(self._cache)), vecs=np.stack(list(self._cache.values())))
 
 
 class EmbeddingSolver(Solver[ConnectionsState, Proposal]):

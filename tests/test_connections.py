@@ -172,3 +172,88 @@ def test_bootstrap_ci_brackets_the_mean_and_paired_identical_is_zero():
     assert lo < 2.0 < hi and hi - lo < 0.7
     assert bootstrap_ci([0.0] * 30) == (0.0, 0.0)
     assert bootstrap_ci([1.0, 2.0, 3.0], seed=1) == bootstrap_ci([1.0, 2.0, 3.0], seed=1)  # deterministic
+
+
+# --- learned pair scorer ---------------------------------------------------------------
+
+def test_pair_labels_and_feature_shapes_and_symmetry():
+    from src.connections.learned import PAIRS, embedding_features, same_group_labels, string_features
+
+    p = make_puzzle()
+    y = same_group_labels(p)
+    assert y.shape == (120,) and y.sum() == 4 * 6  # 4 groups x C(4,2) same-group pairs
+    sf = string_features(p.words)
+    assert all(v.shape == (120,) for v in sf.values())
+    v = np.random.default_rng(0).normal(size=(16, 8))
+    v /= np.linalg.norm(v, axis=1, keepdims=True)
+    ef = embedding_features(v, "x")
+    assert all(f.shape == (120,) and np.isfinite(f).all() for f in ef.values())
+    assert len(PAIRS) == 120
+
+
+def test_string_features_catch_wordplay_signals():
+    from src.connections.learned import PAIRS, string_features
+
+    words = tuple(["LEVEL", "KAYAK", "LISTEN", "SILENT"] + [f"WORD{i}" for i in range(12)])
+    sf = string_features(words)
+    row = {tuple(pr): k for k, pr in enumerate(PAIRS.tolist())}
+    assert sf["str_both_palindrome"][row[(0, 1)]] == 1.0  # LEVEL, KAYAK
+    assert sf["str_anagram"][row[(2, 3)]] == 1.0  # LISTEN, SILENT
+    assert sf["str_anagram"][row[(0, 1)]] == 0.0
+
+
+def test_pair_logit_search_recovers_planted_partition_and_is_the_map_objective():
+    from src.connections.learned import I, J, groups_correct, logit, same_group_labels, solve_from_pair_scores
+
+    p = make_puzzle()
+    y = same_group_labels(p)
+    noisy = np.clip(np.where(y == 1, 0.8, 0.2) + np.random.default_rng(0).normal(0, 0.05, 120), 0.01, 0.99)
+    parts, _ = solve_from_pair_scores(logit(noisy))
+    assert groups_correct(p, parts) == 4
+    # MAP check: the chosen partition has the highest independent-pairs likelihood among a
+    # handful of random alternatives
+    def loglik(groups):
+        same = np.zeros((16, 16), bool)
+        for g in groups:
+            for a in g:
+                for b in g:
+                    same[a, b] = True
+        s = same[I, J]
+        return np.where(s, np.log(noisy), np.log(1 - noisy)).sum()
+
+    rng = np.random.default_rng(1)
+    for _ in range(50):
+        perm = rng.permutation(16)
+        alt = [perm[k:k + 4].tolist() for k in range(0, 16, 4)]
+        assert loglik(parts) >= loglik(alt)
+
+
+def test_embedding_disk_cache_roundtrip(tmp_path):
+    from src.connections.solvers.baselines import EmbeddingModel
+
+    a = EmbeddingModel("fake/model", cache_dir=tmp_path)
+    a._cache = {"CAT": np.ones(4), "DOG": np.zeros(4)}
+    a._save()
+    b = EmbeddingModel("fake/model", cache_dir=tmp_path)
+    assert set(b._cache) == {"CAT", "DOG"} and np.allclose(b._cache["CAT"], 1.0)
+
+
+def test_fusion_bonus_lets_llm_override_a_weak_learned_signal_and_zero_bonus_does_not():
+    from src.connections.fusion import fused_partition, llm_group_scores
+    from src.connections.learned import groups_correct, logit, same_group_labels
+
+    p = make_puzzle()
+    y = same_group_labels(p)
+    # learned scorer is uninformative (all pairs 50/50) except it slightly prefers a decoy pair
+    flat = logit(np.full(120, 0.5))
+    cands = [{"words": sorted(g.words), "category": g.label, "confidence": 0.9} for g in p.groups]
+    llm, valid = llm_group_scores(p.words, cands)
+    assert valid == 4
+    parts, _ = fused_partition(flat, llm, bonus=4.0)
+    assert groups_correct(p, parts) == 4  # LLM groups decide when the pair scorer has no opinion
+
+    strong_wrong = logit(np.where(y == 1, 0.2, 0.8))  # confidently WRONG learned scorer
+    parts0, _ = fused_partition(strong_wrong, llm, bonus=0.0)
+    assert groups_correct(p, parts0) < 4
+    parts_hi, _ = fused_partition(strong_wrong, llm, bonus=200.0)
+    assert groups_correct(p, parts_hi) == 4  # a big enough bonus overrides it

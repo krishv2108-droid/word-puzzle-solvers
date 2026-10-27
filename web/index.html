@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NYT Games Solver</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header class="top">
+    <div class="wrap top-inner">
+      <h1>NYT Games Solver</h1>
+      <nav class="tabs" role="tablist" aria-label="Game">
+        <button class="tab active" role="tab" id="tab-wordle" aria-selected="true" aria-controls="panel-wordle">Wordle</button>
+        <button class="tab" role="tab" id="tab-connections" aria-selected="false" aria-controls="panel-connections">Connections</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <!-- ============================ WORDLE ============================ -->
+    <section id="panel-wordle" role="tabpanel" aria-labelledby="tab-wordle">
+      <div class="modebar">
+        <div class="seg" role="group" aria-label="Wordle mode">
+          <button class="seg-btn active" id="mode-assist" aria-pressed="true">Assistant</button>
+          <button class="seg-btn" id="mode-watch" aria-pressed="false">Watch the solver</button>
+        </div>
+        <label class="check"><input type="checkbox" id="hard"> Hard mode</label>
+      </div>
+
+      <!-- Assistant -->
+      <div id="assist" class="grid2">
+        <div class="card">
+          <h2>Your game</h2>
+          <p class="hint">Type the word you played, click each tile to set the colour Wordle gave it
+            (gray → yellow → green), then press <kbd>Enter</kbd>.</p>
+          <div id="board" class="board" aria-live="polite"></div>
+          <div class="entry">
+            <div id="entry-tiles" class="row" aria-label="Current guess"></div>
+            <div class="entry-controls">
+              <input id="guess" class="guess" maxlength="5" autocomplete="off" autocapitalize="none"
+                     spellcheck="false" placeholder="soare" aria-label="Word you guessed">
+              <button id="add" class="btn primary" disabled>Add guess</button>
+            </div>
+            <p id="error" class="error" role="alert" hidden></p>
+          </div>
+          <div class="actions">
+            <button id="undo" class="btn" disabled>Undo last</button>
+            <button id="reset" class="btn">New game</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="stats">
+            <div><span class="stat-n" id="remaining">2315</span><span class="stat-l">possible answers left</span></div>
+            <div><span class="stat-n" id="bits">11.2</span><span class="stat-l">bits to resolve</span></div>
+          </div>
+          <div class="sugg-head">
+            <h2>Best next guesses</h2>
+            <label class="inline">Rank by
+              <select id="ranker">
+                <option value="entropy">expected information</option>
+                <option value="minimax">worst case</option>
+              </select>
+            </label>
+          </div>
+          <p id="message" class="message" hidden></p>
+          <table class="sugg" id="sugg">
+            <thead><tr><th>Guess</th><th>Information</th><th>Expected left</th><th>Worst case</th></tr></thead>
+            <tbody></tbody>
+          </table>
+          <details id="cands-wrap" class="cands">
+            <summary>Possible answers (<span id="cands-n">2315</span>)</summary>
+            <div id="cands"></div>
+          </details>
+        </div>
+      </div>
+
+      <!-- Watch the solver -->
+      <div id="watch" class="grid2" hidden>
+        <div class="card">
+          <h2>Pick a secret word</h2>
+          <p class="hint">Leave it blank for a random answer, or type one of the 2,315 possible answers.
+            The solver only ever sees the colours.</p>
+          <div class="entry-controls">
+            <input id="secret" class="guess" maxlength="5" autocomplete="off" spellcheck="false"
+                   placeholder="random" aria-label="Secret word">
+            <select id="solver" aria-label="Solver">
+              <option value="entropy">Entropy</option>
+              <option value="minimax">Minimax</option>
+              <option value="frequency">Frequency baseline</option>
+            </select>
+            <button id="run" class="btn primary">Run solver</button>
+          </div>
+          <p id="watch-error" class="error" role="alert" hidden></p>
+          <div id="sim-board" class="board"></div>
+          <p id="sim-result" class="result" hidden></p>
+        </div>
+        <div class="card">
+          <h2>What the solver was thinking</h2>
+          <table class="sugg" id="trace">
+            <thead><tr><th>#</th><th>Guess</th><th>Left</th><th>Expected</th><th>Actual</th></tr></thead>
+            <tbody></tbody>
+          </table>
+          <p class="hint">"Expected" is the information (in bits) the guess was predicted to give; "actual" is what the
+            real feedback delivered. Luck makes them differ.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================== CONNECTIONS ========================= -->
+    <section id="panel-connections" role="tabpanel" aria-labelledby="tab-connections" hidden>
+      <div class="card">
+        <h2>Connections</h2>
+        <p class="hint">The Connections solver is being finalised. It will take 16 words and propose
+          four groups of four.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap foot">
+    Not affiliated with The New York Times. Wordle word lists are the original 2022 lists.
+  </footer>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
