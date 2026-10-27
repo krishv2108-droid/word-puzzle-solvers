@@ -98,6 +98,16 @@ def test_client_reports_failures_and_does_not_cache_them(tmp_path, stop, text, f
     assert not list(tmp_path.glob("*.json"))
 
 
+def test_client_configuration_errors_abort_instead_of_counting_as_model_failures(tmp_path):
+    response = SimpleNamespace(status_code=400, headers={}, request=SimpleNamespace())
+
+    def create(**kw):
+        raise anthropic.BadRequestError("credit balance is too low", response=response, body=None)
+
+    with pytest.raises(anthropic.BadRequestError):
+        call(make_client(tmp_path, create))
+
+
 def test_client_api_error_becomes_failure(tmp_path):
     def create(**kw):
         raise anthropic.APIConnectionError(request=SimpleNamespace())

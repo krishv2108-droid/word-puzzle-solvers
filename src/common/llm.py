@@ -89,7 +89,10 @@ class AnthropicJSONClient:
                 output_config={"effort": effort,
                                "format": {"type": "json_schema", "schema": schema}},
             )
-        except self._anthropic.APIError:
+        except (self._anthropic.AuthenticationError, self._anthropic.PermissionDeniedError,
+                self._anthropic.NotFoundError, self._anthropic.BadRequestError):
+            raise  # configuration problems (key, billing, model id, request shape), not model failures
+        except self._anthropic.APIError:  # rate limit / 5xx / network, after the SDK's retries
             return LLMReply(None, "api_error", Usage(), time.perf_counter() - start)
         latency = time.perf_counter() - start
 
