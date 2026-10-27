@@ -72,5 +72,9 @@ class Solver(ABC, Generic[S, A]):
     def reset(self) -> None:
         """Called before each episode. Expensive one-off setup belongs in __init__."""
 
+    def metrics(self) -> dict[str, float]:
+        """Optional per-episode numeric metrics, read after the episode (e.g. LLM failures)."""
+        return {}
+
     @abstractmethod
     def next_action(self, state: S) -> A: ...

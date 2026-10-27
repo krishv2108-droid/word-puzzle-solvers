@@ -61,7 +61,7 @@ def run_episode(env: Environment, solver: Solver, puzzle) -> EpisodeResult:
         steps=env.steps,
         seconds=seconds,
         usage=solver.usage.minus(before),
-        metrics=dict(env.metrics()),
+        metrics={**env.metrics(), **solver.metrics()},
     )
 
 
