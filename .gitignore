@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.env
+*.npy
+.DS_Store
+
+# Third-party puzzle content is downloaded by scripts, never committed
+data/connections/
+data/cache/
