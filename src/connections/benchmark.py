@@ -138,7 +138,9 @@ def uncertainty_section(ids: list[str], loaded: dict) -> str:
         (gl, gh), (fl, fh) = bootstrap_ci(g), bootstrap_ci(f)
         rows.append(f"| {loaded[a][0]} | {sum(g)/len(g):.2f} | {gl:.2f} to {gh:.2f} | "
                     f"{sum(f)/len(f):.1%} | {fl:.1%} to {fh:.1%} |")
-    pairs = [(x, y) for x, y in (("qwen-hybrid", "mpnet"), ("qwen-hybrid", "qwen-llm"),
+    pairs = [(x, y) for x, y in (("learned-llm", "mpnet"), ("learned-llm", "learned"),
+                                 ("learned", "mpnet"), ("learned-llm", "qwen-hybrid"),
+                                 ("qwen-hybrid", "mpnet"), ("qwen-hybrid", "qwen-llm"),
                                  ("qwen-hybrid", "qwen-hybrid-noemb"), ("mpnet", "qwen-llm"),
                                  ("mpnet", "minilm")) if x in loaded and y in loaded]
     diff = ["", "Paired differences in average groups (A minus B, same puzzles):", "",
@@ -281,7 +283,8 @@ def main(argv: list[str] | None = None) -> int:
                 print(f"probe done: {mk}", file=sys.stderr)
 
     if not args.limit:
-        order = ["random", "minilm", "mpnet"] + [f"{m}-{k}" for m in MODELS for k in ("llm", "hybrid-noemb", "hybrid")]
+        order = (["random", "minilm", "mpnet", "learned"]
+                 + [f"{m}-{k}" for m in MODELS for k in ("llm", "hybrid-noemb", "hybrid")] + ["learned-llm"])
         md, data = build_report(subset, order)
         RESULTS_DIR.mkdir(exist_ok=True)
         (RESULTS_DIR / f"{args.out_name}.md").write_text(md)

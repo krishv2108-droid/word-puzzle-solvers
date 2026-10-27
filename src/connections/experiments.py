@@ -106,26 +106,6 @@ def run_final(bonus: float | None = None) -> None:
         save_episodes("learned-llm", fused.name, results)
 
 
-if __name__ == "__main__":
-    ap = argparse.ArgumentParser()
-    ap.add_argument("--final", action="store_true")
-    ap.add_argument("--bonus", type=float, help="with --final: also score learned+LLM fusion at this bonus")
-    ap.add_argument("--fusion-dev", action="store_true", help="sweep the fusion bonus on DEV")
-    args = ap.parse_args()
-    if args.fusion_dev:
-        md, best = run_fusion_dev()
-        RESULTS_DIR.mkdir(exist_ok=True)
-        (RESULTS_DIR / "connections_fusion_dev.md").write_text(md)
-        print(md)
-    elif args.final:
-        run_final(args.bonus)
-    else:
-        md = run_dev_ablation()
-        RESULTS_DIR.mkdir(exist_ok=True)
-        (RESULTS_DIR / "connections_learned_dev.md").write_text(md)
-        print(md)
-
-
 # --- fusion with LLM candidates (tuned on DEV only) -------------------------------------------
 
 BONUS_GRID = [0, 0.5, 1, 2, 4, 8, 16, 32]
@@ -193,3 +173,23 @@ def run_fusion_dev(n: int = 100, seed: int = 1) -> str:
     best = max(rows, key=lambda r: (r[1].mean(), -r[0]))[0]
     lines += ["", f"Selected bonus (best dev mean; ties to the smaller): **{best}**"]
     return "\n".join(lines) + "\n", best
+
+
+if __name__ == "__main__":
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--final", action="store_true")
+    ap.add_argument("--bonus", type=float, help="with --final: also score learned+LLM fusion at this bonus")
+    ap.add_argument("--fusion-dev", action="store_true", help="sweep the fusion bonus on DEV")
+    args = ap.parse_args()
+    if args.fusion_dev:
+        md, best = run_fusion_dev()
+        RESULTS_DIR.mkdir(exist_ok=True)
+        (RESULTS_DIR / "connections_fusion_dev.md").write_text(md)
+        print(md)
+    elif args.final:
+        run_final(args.bonus)
+    else:
+        md = run_dev_ablation()
+        RESULTS_DIR.mkdir(exist_ok=True)
+        (RESULTS_DIR / "connections_learned_dev.md").write_text(md)
+        print(md)

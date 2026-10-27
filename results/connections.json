@@ -80,6 +80,33 @@
       }
     },
     {
+      "name": "learned pair scorer",
+      "n": 150,
+      "solve_rate": 0.03333333333333333,
+      "solved_within": {},
+      "mean_steps": 1.0,
+      "mean_steps_solved": 1.0,
+      "worst_steps": 1,
+      "histogram": {
+        "1": 5
+      },
+      "unsolved": 145,
+      "ms_per_puzzle_mean": 173.25930999824777,
+      "ms_per_puzzle_p95": 163.6492499965243,
+      "ms_per_puzzle_max": 7353.848541970365,
+      "cost_usd_total": 0.0,
+      "cost_usd_per_puzzle": 0.0,
+      "input_tokens_per_puzzle": 0.0,
+      "output_tokens_per_puzzle": 0.0,
+      "mean_metrics": {
+        "groups_correct": 0.7,
+        "tier_blue": 0.15333333333333332,
+        "tier_green": 0.2,
+        "tier_purple": 0.09333333333333334,
+        "tier_yellow": 0.25333333333333335
+      }
+    },
+    {
       "name": "llm (qwen3-8b local)",
       "n": 150,
       "solve_rate": 0.02,
@@ -170,6 +197,37 @@
         "tier_purple": 0.06,
         "tier_yellow": 0.19333333333333333
       }
+    },
+    {
+      "name": "learned + LLM (qwen3-8b local)",
+      "n": 150,
+      "solve_rate": 0.06,
+      "solved_within": {},
+      "mean_steps": 1.0,
+      "mean_steps_solved": 1.0,
+      "worst_steps": 1,
+      "histogram": {
+        "1": 9
+      },
+      "unsolved": 141,
+      "ms_per_puzzle_mean": 25895.941132768057,
+      "ms_per_puzzle_p95": 53563.41183296172,
+      "ms_per_puzzle_max": 62475.57637398131,
+      "cost_usd_total": 0.0,
+      "cost_usd_per_puzzle": 0.0,
+      "input_tokens_per_puzzle": 377.74,
+      "output_tokens_per_puzzle": 560.82,
+      "mean_metrics": {
+        "candidates_valid": 7.9,
+        "groups_correct": 0.8266666666666667,
+        "groups_from_llm": 1.2333333333333334,
+        "llm_cache_hit": 1.0,
+        "llm_failure": 0.0,
+        "tier_blue": 0.2,
+        "tier_green": 0.24,
+        "tier_purple": 0.09333333333333334,
+        "tier_yellow": 0.29333333333333333
+      }
     }
   ],
   "Most recent third (2024-08-11 to 2025-02-28, n=50)": [
@@ -250,6 +308,31 @@
         "tier_green": 0.16,
         "tier_purple": 0.06,
         "tier_yellow": 0.2
+      }
+    },
+    {
+      "name": "learned pair scorer",
+      "n": 50,
+      "solve_rate": 0.0,
+      "solved_within": {},
+      "mean_steps": 1.0,
+      "mean_steps_solved": NaN,
+      "worst_steps": 1,
+      "histogram": {},
+      "unsolved": 50,
+      "ms_per_puzzle_mean": 133.80358823691495,
+      "ms_per_puzzle_p95": 183.37845901260152,
+      "ms_per_puzzle_max": 190.35208295099437,
+      "cost_usd_total": 0.0,
+      "cost_usd_per_puzzle": 0.0,
+      "input_tokens_per_puzzle": 0.0,
+      "output_tokens_per_puzzle": 0.0,
+      "mean_metrics": {
+        "groups_correct": 0.54,
+        "tier_blue": 0.12,
+        "tier_green": 0.14,
+        "tier_purple": 0.02,
+        "tier_yellow": 0.26
       }
     },
     {
@@ -338,6 +421,35 @@
         "tier_green": 0.08,
         "tier_purple": 0.04,
         "tier_yellow": 0.14
+      }
+    },
+    {
+      "name": "learned + LLM (qwen3-8b local)",
+      "n": 50,
+      "solve_rate": 0.0,
+      "solved_within": {},
+      "mean_steps": 1.0,
+      "mean_steps_solved": NaN,
+      "worst_steps": 1,
+      "histogram": {},
+      "unsolved": 50,
+      "ms_per_puzzle_mean": 22049.01368420222,
+      "ms_per_puzzle_p95": 31371.763751027174,
+      "ms_per_puzzle_max": 32487.725291051902,
+      "cost_usd_total": 0.0,
+      "cost_usd_per_puzzle": 0.0,
+      "input_tokens_per_puzzle": 378.62,
+      "output_tokens_per_puzzle": 556.48,
+      "mean_metrics": {
+        "candidates_valid": 6.42,
+        "groups_correct": 0.6,
+        "groups_from_llm": 0.82,
+        "llm_cache_hit": 1.0,
+        "llm_failure": 0.0,
+        "tier_blue": 0.14,
+        "tier_green": 0.2,
+        "tier_purple": 0.0,
+        "tier_yellow": 0.26
       }
     }
   ],
