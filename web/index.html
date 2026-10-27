@@ -110,10 +110,49 @@
 
     <!-- ========================== CONNECTIONS ========================= -->
     <section id="panel-connections" role="tabpanel" aria-labelledby="tab-connections" hidden>
-      <div class="card">
-        <h2>Connections</h2>
-        <p class="hint">The Connections solver is being finalised. It will take 16 words and propose
-          four groups of four.</p>
+      <div class="grid2">
+        <div class="card">
+          <h2>The 16 words</h2>
+          <p class="hint">Type the words from today's puzzle, or paste all 16 (one per line or separated by commas).</p>
+          <div id="c-grid" class="c-grid"></div>
+          <details class="paste">
+            <summary>Paste all 16 at once</summary>
+            <textarea id="c-paste" rows="4" placeholder="APPLE, IRON, TANGO, NILE, ..." aria-label="Paste 16 words"></textarea>
+            <button id="c-fill" class="btn">Fill the grid</button>
+          </details>
+          <div class="actions">
+            <button id="c-solve" class="btn primary">Solve all</button>
+            <button id="c-hint" class="btn">Give me a group</button>
+            <button id="c-clear" class="btn">Clear</button>
+          </div>
+          <p id="c-error" class="error" role="alert" hidden></p>
+          <p class="hint" id="c-status" hidden></p>
+        </div>
+
+        <div class="card">
+          <div id="c-solution" hidden>
+            <h2>Proposed solution</h2>
+            <p class="hint" id="c-expected"></p>
+            <div id="c-groups" class="c-groups"></div>
+          </div>
+          <div id="c-hintbox" hidden>
+            <h2>Hint: one group</h2>
+            <div id="c-hintgroup" class="c-groups"></div>
+            <div class="actions">
+              <button id="c-ok" class="btn primary">Got it right - mark solved</button>
+              <button id="c-no" class="btn">That was wrong</button>
+            </div>
+          </div>
+          <div id="c-solved-wrap" hidden>
+            <h2>Solved so far</h2>
+            <div id="c-solved" class="c-groups"></div>
+          </div>
+          <p class="hint" id="c-empty">Enter the 16 words and press <strong>Solve all</strong> for a full proposal with a
+            confidence for each group, or <strong>Give me a group</strong> for a single hint.</p>
+          <p class="hint c-honest">How good is it? On 150 held-out past puzzles it gets about 0.7 of the 4 groups right
+            on average, and fully solves roughly 3 in 100. Confidence percentages are calibrated against those
+            results, so treat suggestions as hints, not answers.</p>
+        </div>
       </div>
     </section>
   </main>
@@ -123,5 +162,6 @@
   </footer>
 
   <script src="/static/app.js"></script>
+  <script src="/static/connections.js"></script>
 </body>
 </html>

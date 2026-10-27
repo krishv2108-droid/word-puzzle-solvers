@@ -4,6 +4,7 @@
 """
 from __future__ import annotations
 
+import threading
 from contextlib import asynccontextmanager
 from pathlib import Path
 
@@ -12,9 +13,18 @@ from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 
+from .connections_service import ConnectionsService
 from .wordle_service import InputError, WordleService
 
 WEB_DIR = Path(__file__).resolve().parents[2] / "web"
+BUNDLE = Path(__file__).resolve().parents[2] / "data" / "cache" / "connections_model.joblib"
+
+
+def _warm_connections(svc: ConnectionsService) -> None:
+    try:
+        svc.solve([f"warm{i}" for i in range(16)])
+    except Exception:  # warming is best-effort
+        pass
 
 
 class GuessEntry(BaseModel):
@@ -30,6 +40,15 @@ class SuggestRequest(BaseModel):
     top_k: int = Field(default=10, ge=1, le=25)
 
 
+class SolveRequest(BaseModel):
+    words: list[str] = Field(max_length=32, description="the 16 board words")
+
+
+class HintRequest(SolveRequest):
+    solved: list[list[str]] = Field(default_factory=list, max_length=4, description="groups already found")
+    wrong: list[list[str]] = Field(default_factory=list, max_length=40, description="guesses known to be wrong")
+
+
 class SimulateRequest(BaseModel):
     answer: str | None = Field(default=None, description="omit for a random answer")
     solver: str = "entropy"
@@ -39,6 +58,11 @@ class SimulateRequest(BaseModel):
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     app.state.wordle = WordleService()
+    app.state.connections = None
+    if BUNDLE.exists():
+        app.state.connections = ConnectionsService.load(BUNDLE)
+        # load the embedding models in the background so the first request is not slow
+        threading.Thread(target=_warm_connections, args=(app.state.connections,), daemon=True).start()
     yield
 
 
@@ -74,6 +98,28 @@ def wordle_suggest(req: SuggestRequest) -> dict:
 def wordle_simulate(req: SimulateRequest) -> dict:
     svc: WordleService = app.state.wordle
     return svc.simulate(req.answer, req.solver, req.hard_mode)
+
+
+def _connections() -> ConnectionsService:
+    svc = app.state.connections
+    if svc is None:
+        raise HTTPException(503, "The Connections model has not been built. Run: python -m src.connections.train")
+    return svc
+
+
+@app.get("/api/connections/info")
+def connections_info() -> dict:
+    return {"available": app.state.connections is not None}
+
+
+@app.post("/api/connections/solve")
+def connections_solve(req: SolveRequest) -> dict:
+    return _connections().solve(req.words)
+
+
+@app.post("/api/connections/hint")
+def connections_hint(req: HintRequest) -> dict:
+    return _connections().hint(req.words, req.solved, req.wrong)
 
 
 if WEB_DIR.exists():

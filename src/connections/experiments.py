@@ -175,13 +175,43 @@ def run_fusion_dev(n: int = 100, seed: int = 1) -> str:
     return "\n".join(lines) + "\n", best
 
 
+def run_calibration() -> str:
+    """Fit the confidence calibrator on DEV out-of-fold predictions; check reliability on TEST."""
+    from .calibration import Calibrator, brier, collect, reliability
+
+    test, dev = split_test_dev(load_puzzles())
+    embs = embedders()
+    X, y, names = feature_matrix(dev, embs)
+    cols = list(range(len(names)))
+    cal = Calibrator().fit(*collect(dev, oof_logits(dev, X, y, cols)))
+
+    model = fit_pair_model(X[:, :, cols], y)
+    learned = LearnedModel(model, embs, names, cols)
+    Xt, yt = collect(test, np.stack([learned.logits(p.words) for p in test]))
+    p = cal.predict(Xt)
+    base = np.full_like(yt, yt.mean())
+    rows, ece = reliability(p, yt)
+    lines = [f"## Group confidence calibration (fit on DEV out-of-fold, checked on TEST, {len(yt)} groups)", "",
+             f"Brier score: **{brier(p, yt):.3f}** (always predicting the base rate: {brier(base, yt):.3f}); "
+             f"expected calibration error: **{ece:.3f}**", "",
+             "| Stated confidence | Groups | Mean stated | Actually correct |", "|---|---|---|---|"]
+    for lo, hi, n, mp, rate in rows:
+        lines.append(f"| {lo:.0%} to {hi:.0%} | {n} | {mp:.1%} | {rate:.1%} |")
+    return "\n".join(lines) + "\n"
+
+
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--final", action="store_true")
     ap.add_argument("--bonus", type=float, help="with --final: also score learned+LLM fusion at this bonus")
     ap.add_argument("--fusion-dev", action="store_true", help="sweep the fusion bonus on DEV")
+    ap.add_argument("--calibration", action="store_true", help="fit confidence calibrator on DEV, check on TEST")
     args = ap.parse_args()
-    if args.fusion_dev:
+    if args.calibration:
+        md = run_calibration()
+        (RESULTS_DIR / "connections_calibration.md").write_text(md)
+        print(md)
+    elif args.fusion_dev:
         md, best = run_fusion_dev()
         RESULTS_DIR.mkdir(exist_ok=True)
         (RESULTS_DIR / "connections_fusion_dev.md").write_text(md)
