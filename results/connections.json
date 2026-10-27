@@ -1,0 +1,164 @@
+{
+  "All 628 puzzles": [
+    {
+      "name": "random",
+      "n": 628,
+      "solve_rate": 0.0,
+      "solved_within": {},
+      "mean_steps": 1.0,
+      "mean_steps_solved": NaN,
+      "worst_steps": 1,
+      "histogram": {},
+      "unsolved": 628,
+      "ms_per_puzzle_mean": 0.006128919209282442,
+      "ms_per_puzzle_p95": 0.006249989382922649,
+      "ms_per_puzzle_max": 0.3660829970613122,
+      "cost_usd_total": 0.0,
+      "cost_usd_per_puzzle": 0.0,
+      "input_tokens_per_puzzle": 0.0,
+      "output_tokens_per_puzzle": 0.0,
+      "mean_metrics": {
+        "groups_correct": 0.01592356687898089,
+        "tier_blue": 0.004777070063694267,
+        "tier_green": 0.0015923566878980893,
+        "tier_purple": 0.0031847133757961785,
+        "tier_yellow": 0.006369426751592357
+      }
+    },
+    {
+      "name": "embedding (all-MiniLM-L6-v2)",
+      "n": 628,
+      "solve_rate": 0.01910828025477707,
+      "solved_within": {},
+      "mean_steps": 1.0,
+      "mean_steps_solved": 1.0,
+      "worst_steps": 1,
+      "histogram": {
+        "1": 12
+      },
+      "unsolved": 616,
+      "ms_per_puzzle_mean": 36.2774770520405,
+      "ms_per_puzzle_p95": 29.756832984276116,
+      "ms_per_puzzle_max": 5811.770249973051,
+      "cost_usd_total": 0.0,
+      "cost_usd_per_puzzle": 0.0,
+      "input_tokens_per_puzzle": 0.0,
+      "output_tokens_per_puzzle": 0.0,
+      "mean_metrics": {
+        "groups_correct": 0.482484076433121,
+        "tier_blue": 0.07961783439490445,
+        "tier_green": 0.14331210191082802,
+        "tier_purple": 0.052547770700636945,
+        "tier_yellow": 0.2070063694267516
+      }
+    },
+    {
+      "name": "embedding (all-mpnet-base-v2)",
+      "n": 628,
+      "solve_rate": 0.03343949044585987,
+      "solved_within": {},
+      "mean_steps": 1.0,
+      "mean_steps_solved": 1.0,
+      "worst_steps": 1,
+      "histogram": {
+        "1": 21
+      },
+      "unsolved": 607,
+      "ms_per_puzzle_mean": 41.680254911648696,
+      "ms_per_puzzle_p95": 49.43249997450039,
+      "ms_per_puzzle_max": 650.7611249689944,
+      "cost_usd_total": 0.0,
+      "cost_usd_per_puzzle": 0.0,
+      "input_tokens_per_puzzle": 0.0,
+      "output_tokens_per_puzzle": 0.0,
+      "mean_metrics": {
+        "groups_correct": 0.6847133757961783,
+        "tier_blue": 0.1480891719745223,
+        "tier_green": 0.2070063694267516,
+        "tier_purple": 0.07006369426751592,
+        "tier_yellow": 0.25955414012738853
+      }
+    }
+  ],
+  "Most recent 100 puzzles (2024-11-21 to 2025-02-28)": [
+    {
+      "name": "random",
+      "n": 100,
+      "solve_rate": 0.0,
+      "solved_within": {},
+      "mean_steps": 1.0,
+      "mean_steps_solved": NaN,
+      "worst_steps": 1,
+      "histogram": {},
+      "unsolved": 100,
+      "ms_per_puzzle_mean": 0.008895090431906283,
+      "ms_per_puzzle_p95": 0.006333983037620783,
+      "ms_per_puzzle_max": 0.3660829970613122,
+      "cost_usd_total": 0.0,
+      "cost_usd_per_puzzle": 0.0,
+      "input_tokens_per_puzzle": 0.0,
+      "output_tokens_per_puzzle": 0.0,
+      "mean_metrics": {
+        "groups_correct": 0.02,
+        "tier_blue": 0.01,
+        "tier_green": 0.0,
+        "tier_purple": 0.0,
+        "tier_yellow": 0.01
+      }
+    },
+    {
+      "name": "embedding (all-MiniLM-L6-v2)",
+      "n": 100,
+      "solve_rate": 0.05,
+      "solved_within": {},
+      "mean_steps": 1.0,
+      "mean_steps_solved": 1.0,
+      "worst_steps": 1,
+      "histogram": {
+        "1": 5
+      },
+      "unsolved": 95,
+      "ms_per_puzzle_mean": 26.39639921078924,
+      "ms_per_puzzle_p95": 28.819791972637177,
+      "ms_per_puzzle_max": 30.319917015731335,
+      "cost_usd_total": 0.0,
+      "cost_usd_per_puzzle": 0.0,
+      "input_tokens_per_puzzle": 0.0,
+      "output_tokens_per_puzzle": 0.0,
+      "mean_metrics": {
+        "groups_correct": 0.5,
+        "tier_blue": 0.12,
+        "tier_green": 0.13,
+        "tier_purple": 0.06,
+        "tier_yellow": 0.19
+      }
+    },
+    {
+      "name": "embedding (all-mpnet-base-v2)",
+      "n": 100,
+      "solve_rate": 0.04,
+      "solved_within": {},
+      "mean_steps": 1.0,
+      "mean_steps_solved": 1.0,
+      "worst_steps": 1,
+      "histogram": {
+        "1": 4
+      },
+      "unsolved": 96,
+      "ms_per_puzzle_mean": 37.95136418950278,
+      "ms_per_puzzle_p95": 45.23629101458937,
+      "ms_per_puzzle_max": 53.209291014354676,
+      "cost_usd_total": 0.0,
+      "cost_usd_per_puzzle": 0.0,
+      "input_tokens_per_puzzle": 0.0,
+      "output_tokens_per_puzzle": 0.0,
+      "mean_metrics": {
+        "groups_correct": 0.57,
+        "tier_blue": 0.15,
+        "tier_green": 0.11,
+        "tier_purple": 0.06,
+        "tier_yellow": 0.25
+      }
+    }
+  ]
+}
