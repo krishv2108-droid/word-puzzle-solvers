@@ -75,7 +75,7 @@ $("mode-assist").addEventListener("click", () => selectMode("assist"));
 $("mode-watch").addEventListener("click", () => selectMode("watch"));
 
 /* ---------- assistant ---------- */
-const game = { history: [], states: [0, 0, 0, 0, 0], seq: 0 };
+const game = { history: [], states: [0, 0, 0, 0, 0], seq: 0, suggestion: null, prefilled: null };
 
 function renderBoard() {
   const board = $("board");
@@ -122,7 +122,43 @@ function bitsCell(bits, max) {
   return bar;
 }
 
-function renderSuggestions(r) {
+/* The top-ranked guess, shown prominently. Returns nothing; stores it in game.suggestion. */
+function renderNext(r, solved) {
+  const top = !solved && r.suggestions.length ? r.suggestions[0] : null;
+  game.suggestion = top ? top.word : null;
+  $("next").hidden = !top;
+  if (!top) return;
+  $("next-tiles").replaceChildren(...[...top.word].map((ch) => tile(ch, null, false)));
+  const left = top.expected_remaining < 10 ? top.expected_remaining.toFixed(1) : Math.round(top.expected_remaining).toLocaleString();
+  $("next-why").textContent =
+    r.remaining === 1
+      ? "Only one word fits, so play it."
+      : r.remaining === 2 && top.is_candidate
+        ? "Two words are left. This wins right away if it is the one, and settles it either way."
+        : `Expected to narrow ${r.remaining.toLocaleString()} possible answers down to about ${left}.` +
+        (top.is_candidate ? " It could also be the answer." : "");
+}
+
+/* Pre-fill the entry box with the suggestion, but never overwrite a word the user typed. */
+function applySuggestion(word) {
+  const input = $("guess");
+  const current = input.value.toLowerCase();
+  if (word && (current === "" || current === game.prefilled)) {
+    input.value = word;
+    game.prefilled = word;
+    game.states = [0, 0, 0, 0, 0];
+    renderEntry();
+  } else if (!word && current === game.prefilled) {
+    input.value = "";
+    game.prefilled = null;
+    renderEntry();
+  }
+}
+
+function renderSuggestions(r, history = game.history, apply = true) {
+  const solved = history.length > 0 && history[history.length - 1].feedback === "ggggg";
+  renderNext(r, solved);
+  if (apply) applySuggestion(game.suggestion);
   $("remaining").textContent = r.remaining.toLocaleString();
   $("bits").textContent = r.bits_remaining.toFixed(1);
   $("message").hidden = !r.message;
@@ -160,7 +196,7 @@ function renderSuggestions(r) {
   $("cands-wrap").hidden = r.remaining === 0;
 }
 
-async function refresh(history = game.history) {
+async function refresh(history = game.history, apply = true) {
   const mine = ++game.seq;
   const r = await api("/api/wordle/suggest", {
     history,
@@ -169,7 +205,7 @@ async function refresh(history = game.history) {
     top_k: 10,
   });
   if (mine !== game.seq) return null; // a newer request superseded this one
-  renderSuggestions(r);
+  renderSuggestions(r, history, apply);
   return r;
 }
 
@@ -179,7 +215,7 @@ async function addGuess() {
   const entry = { guess, feedback: statesToFb(game.states) };
   showError("error", "");
   try {
-    const r = await refresh([...game.history, entry]);
+    const r = await refresh([...game.history, entry], false);
     if (r === null) return;
     game.history.push(entry);
     game.justAdded = true;
@@ -187,6 +223,7 @@ async function addGuess() {
     game.states = [0, 0, 0, 0, 0];
     renderBoard();
     renderEntry();
+    applySuggestion(game.suggestion);
     if (entry.feedback === "ggggg") {
       $("message").hidden = false;
       $("message").textContent = `Solved in ${game.history.length} guess${game.history.length === 1 ? "" : "es"}.`;
@@ -204,6 +241,15 @@ $("guess").addEventListener("input", (e) => {
 });
 $("guess").addEventListener("keydown", (e) => e.key === "Enter" && addGuess());
 $("add").addEventListener("click", addGuess);
+$("guess").addEventListener("focus", (e) => e.target.select()); // typing replaces the suggested word
+$("next-use").addEventListener("click", () => {
+  if (!game.suggestion) return;
+  $("guess").value = game.suggestion;
+  game.prefilled = game.suggestion;
+  game.states = [0, 0, 0, 0, 0];
+  renderEntry();
+  $("guess").focus();
+});
 $("undo").addEventListener("click", async () => {
   game.history.pop();
   renderBoard();
@@ -213,6 +259,7 @@ $("undo").addEventListener("click", async () => {
 $("reset").addEventListener("click", async () => {
   game.history = [];
   game.states = [0, 0, 0, 0, 0];
+  game.prefilled = null;
   $("guess").value = "";
   renderBoard();
   renderEntry();

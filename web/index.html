@@ -32,9 +32,19 @@
       <div id="assist" class="grid2">
         <div class="card">
           <h2>Your game</h2>
-          <p class="hint">Type the word you played, click each tile to set the colour Wordle gave it
-            (gray → yellow → green), then press <kbd>Enter</kbd>.</p>
+          <p class="hint">Play the suggested guess in Wordle (or type your own below), click each tile to set the
+            colour Wordle gave it (gray → yellow → green), then press <kbd>Enter</kbd>.</p>
           <div id="board" class="board" aria-live="polite"></div>
+          <div id="next" class="next" hidden>
+            <div class="next-label">Suggested next guess</div>
+            <div class="next-main">
+              <div id="next-tiles" class="row" aria-label="Suggested guess"></div>
+              <div class="next-side">
+                <p id="next-why" class="next-why"></p>
+                <button id="next-use" class="btn" type="button">Use this guess</button>
+              </div>
+            </div>
+          </div>
           <div class="entry">
             <div id="entry-tiles" class="row" aria-label="Current guess"></div>
             <div class="entry-controls">

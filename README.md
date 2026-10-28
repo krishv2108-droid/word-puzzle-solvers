@@ -5,9 +5,9 @@ approach, and a web UI with a tab for each game.
 
 **Live demo (Wordle):** https://nyt-games-solver.onrender.com &nbsp;·&nbsp; free hosting, so the first load after a pause takes up to a minute to wake. Connections runs locally (it needs a few GB of RAM; see [Deploy](#deploy)).
 
-| Wordle assistant | Watch the solver |
+| Wordle assistant (suggests your next guess) | Watch the solver |
 |---|---|
-| ![Wordle assistant narrowing 2,315 answers to 42](docs/img/wordle-assistant.jpg) | ![Solver playing a full game](docs/img/wordle-watch.jpg) |
+| ![Wordle assistant suggesting the next guess after 2,315 answers narrow to 42](docs/img/wordle-assistant.jpg) | ![Solver playing a full game](docs/img/wordle-watch.jpg) |
 
 | Connections: solve all | Connections: one-group hints |
 |---|---|
@@ -251,7 +251,7 @@ python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 python data/download_wordle.py              # original Wordle word lists
 python data/download_connections.py         # dev dataset (gitignored; NYT content, see above)
-pytest                                      # 160 tests
+pytest                                      # 165 tests
 ```
 
 ```bash
@@ -307,7 +307,7 @@ src/api/         FastAPI app and services
 web/             plain HTML/JS/CSS frontend (no build step)
 data/            download scripts; downloaded data is gitignored
 results/         committed benchmark tables (md + json) and per-episode records
-tests/           160 tests
+tests/           165 tests
 deploy/          Dockerfile, Space builder, minimal Render requirements
 render.yaml      Render Blueprint (Wordle on the free tier)
 ```

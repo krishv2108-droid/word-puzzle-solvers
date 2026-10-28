@@ -164,3 +164,11 @@ select { font: inherit; padding: 8px 10px; border-radius: 8px; border: 1px solid
   :root:not([data-theme="light"]) .c-group.g2, :root:not([data-theme="light"]) .c-group.g3 { color: #121214; } }
 
 .code { background: var(--bg); border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; overflow-x: auto; font: 0.85rem/1.5 ui-monospace, "SF Mono", Menlo, monospace; }
+
+/* suggested next guess */
+.next { border: 1px solid var(--accent); background: var(--bar); border-radius: var(--radius); padding: 10px 12px 12px; margin: 4px 0 14px; }
+.next-label { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+.next-main { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+.next .tile { border-color: var(--accent); }
+.next-side { flex: 1 1 150px; min-width: 0; }
+.next-why { margin: 0 0 8px; font-size: 0.88rem; color: var(--ink); }
