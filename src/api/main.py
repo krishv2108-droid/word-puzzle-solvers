@@ -4,6 +4,7 @@
 """
 from __future__ import annotations
 
+import logging
 import threading
 from contextlib import asynccontextmanager
 from pathlib import Path
@@ -60,9 +61,12 @@ async def lifespan(app: FastAPI):
     app.state.wordle = WordleService()
     app.state.connections = None
     if BUNDLE.exists():
-        app.state.connections = ConnectionsService.load(BUNDLE)
-        # load the embedding models in the background so the first request is not slow
-        threading.Thread(target=_warm_connections, args=(app.state.connections,), daemon=True).start()
+        try:
+            app.state.connections = ConnectionsService.load(BUNDLE)
+            # load the embedding models in the background so the first request is not slow
+            threading.Thread(target=_warm_connections, args=(app.state.connections,), daemon=True).start()
+        except Exception as e:  # e.g. scikit-learn or sentence-transformers not installed on a small host
+            logging.getLogger("uvicorn.error").warning("Connections disabled: %s", e)
     yield
 
 

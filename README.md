@@ -3,7 +3,7 @@
 Solvers for **Wordle** and **NYT Connections**, a rigorous evaluation harness that benchmarks every
 approach, and a web UI with a tab for each game.
 
-**Live demo:** SPACE_URL_PLACEHOLDER
+**Live demo (Wordle):** RENDER_URL_PLACEHOLDER &nbsp;·&nbsp; Connections runs locally (it needs a few GB of RAM; see [Deploy](#deploy)).
 
 | Wordle assistant | Watch the solver |
 |---|---|
@@ -276,13 +276,25 @@ Wordle works without the training step; the Connections tab needs the trained mo
 
 ### Deploy
 
-`deploy/` contains a Dockerfile (CPU-only PyTorch, models baked into the image) and a script that
-stages a self-contained folder for a Hugging Face Docker Space or any Docker host:
+- **Wordle, free hosting:** [`render.yaml`](render.yaml) is a Render Blueprint for the free tier
+  (512 MB). It installs only `numpy`, `fastapi` and `uvicorn` and builds the pattern matrix at deploy
+  time. The app starts with Connections disabled, and the UI says so. Free instances sleep after
+  about 15 minutes idle, so the first load after a pause takes a short while.
+- **Full app (Wordle + Connections):** the Connections model needs roughly 2-3 GB of RAM because it
+  runs three sentence-embedding models. `deploy/` has a Dockerfile (CPU-only PyTorch, models baked
+  into the image) and a script that stages a self-contained folder for any Docker host with enough
+  memory:
 
-```bash
-python deploy/build_space.py                # stages build/space
-docker build -t nyt-games-solver build/space && docker run -p 7860:7860 nyt-games-solver
-```
+  ```bash
+  python -m src.connections.train             # build the model first
+  python deploy/build_space.py                # stages build/space
+  docker build -t nyt-games-solver build/space && docker run -p 7860:7860 nyt-games-solver
+  ```
+
+  I verified the staged bundle in a clean virtualenv with only the pinned runtime packages. I could
+  not build the Docker image itself (no Docker on my machine), and I did not host it publicly:
+  Hugging Face now requires a paid PRO plan for Docker Spaces, and no free host I found has the
+  memory. `build_space.py --upload USER/NAME` will publish it to a Space if you have that plan.
 
 ## Repo layout
 
@@ -296,7 +308,8 @@ web/             plain HTML/JS/CSS frontend (no build step)
 data/            download scripts; downloaded data is gitignored
 results/         committed benchmark tables (md + json) and per-episode records
 tests/           129 tests
-deploy/          Dockerfile and Space builder
+deploy/          Dockerfile, Space builder, minimal Render requirements
+render.yaml      Render Blueprint (Wordle on the free tier)
 ```
 
 **Why plain HTML/JS rather than React:** the UI is two forms and a few tables, so a build toolchain

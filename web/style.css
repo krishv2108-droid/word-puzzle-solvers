@@ -162,3 +162,5 @@ select { font: inherit; padding: 8px 10px; border-radius: 8px; border: 1px solid
 .c-honest { border-top: 1px solid var(--line); padding-top: 10px; margin-top: 8px; }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .c-group.g0, :root:not([data-theme="light"]) .c-group.g1,
   :root:not([data-theme="light"]) .c-group.g2, :root:not([data-theme="light"]) .c-group.g3 { color: #121214; } }
+
+.code { background: var(--bg); border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; overflow-x: auto; font: 0.85rem/1.5 ui-monospace, "SF Mono", Menlo, monospace; }

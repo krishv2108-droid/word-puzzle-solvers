@@ -110,7 +110,19 @@
 
     <!-- ========================== CONNECTIONS ========================= -->
     <section id="panel-connections" role="tabpanel" aria-labelledby="tab-connections" hidden>
-      <div class="grid2">
+      <div id="c-unavailable" class="card" hidden>
+        <h2>Connections runs locally</h2>
+        <p>The Connections solver loads three sentence-embedding models (a couple of gigabytes of memory), which is more than
+          this free demo host provides. The Wordle tab is fully live here.</p>
+        <p>To try Connections, run it on your own machine:</p>
+        <pre class="code">git clone https://github.com/krishv2108-droid/nyt-games-solver
+cd nyt-games-solver &amp;&amp; pip install -r requirements.txt
+python data/download_connections.py
+python -m src.connections.train
+uvicorn src.api.main:app</pre>
+        <p class="hint">The README has screenshots, measured accuracy and the full write-up.</p>
+      </div>
+      <div class="grid2" id="c-main">
         <div class="card">
           <h2>The 16 words</h2>
           <p class="hint">Type the words from today's puzzle, or paste all 16 (one per line or separated by commas).</p>

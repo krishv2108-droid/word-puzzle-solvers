@@ -1,0 +1,4 @@
+# Minimal runtime for the Wordle-only deployment on a small free host (no PyTorch, no scikit-learn).
+numpy>=1.26
+fastapi>=0.110
+uvicorn>=0.29

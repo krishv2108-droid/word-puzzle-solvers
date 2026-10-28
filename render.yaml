@@ -1,0 +1,11 @@
+# Render Blueprint: Wordle live on the free tier. The Connections model needs ~2-3 GB of RAM
+# (three embedding models), which the 512 MB free instance cannot hold, so the app starts with
+# Connections disabled and the UI says so. See README for the full app.
+services:
+  - type: web
+    name: nyt-games-solver
+    runtime: python
+    plan: free
+    buildCommand: pip install -r deploy/requirements-render.txt && python -c "from src.wordle.solvers.base import WordleData; WordleData.load()"
+    startCommand: uvicorn src.api.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /api/health

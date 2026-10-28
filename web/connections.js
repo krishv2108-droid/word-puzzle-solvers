@@ -146,3 +146,11 @@ $("c-fill").addEventListener("click", () => {
 });
 
 buildGrid();
+
+fetch("/api/connections/info")
+  .then((r) => r.json())
+  .then((info) => {
+    $("c-unavailable").hidden = info.available;
+    $("c-main").hidden = !info.available;
+  })
+  .catch(() => {});
