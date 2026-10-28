@@ -9,3 +9,5 @@ __pycache__/
 # Third-party puzzle content is downloaded by scripts, never committed
 data/connections/
 data/cache/
+build/
+.claude/
