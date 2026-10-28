@@ -13,6 +13,7 @@ from typing import Sequence
 
 import numpy as np
 
+from ..common.cachefile import load_npy, save_npy
 from .engine import WORD_LEN
 
 CACHE_DIR = Path(__file__).resolve().parents[2] / "data" / "cache"
@@ -61,9 +62,9 @@ def load_pattern_matrix(
     """Build the matrix, or load it from an on-disk cache keyed by the word lists."""
     key = hashlib.sha1(("\n".join(guesses) + "|" + "\n".join(answers)).encode()).hexdigest()[:16]
     path = cache_dir / f"patterns_{len(guesses)}x{len(answers)}_{key}.npy"
-    if path.exists():
-        return np.load(path)
+    cached = load_npy(path, shape=(len(guesses), len(answers)))
+    if cached is not None:
+        return cached
     matrix = build_pattern_matrix(guesses, answers)
-    cache_dir.mkdir(parents=True, exist_ok=True)
-    np.save(path, matrix)
+    save_npy(path, matrix)  # best effort: a read-only filesystem just rebuilds next time
     return matrix

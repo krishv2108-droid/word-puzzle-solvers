@@ -16,7 +16,7 @@ from ..common.llm import JSONClient
 from ..common.solver import Solver
 from .env import ConnectionsState, Proposal
 from .learned import LearnedModel, logits_to_matrix
-from .partition import all_groups, best_partitions, group_id, pair_sum_scores
+from .partition import best_partitions, group_id, pair_sum_scores
 from .solvers.hybrid import CANDIDATES_SCHEMA, SYSTEM_PROMPT, HybridSolver
 from .solvers.llm import user_prompt
 

@@ -26,7 +26,7 @@ import numpy as np
 
 from ..common.solver import Solver
 from .env import ConnectionsState, Proposal
-from .partition import all_groups, best_partitions, group_id, pair_sum_scores
+from .partition import best_partitions, group_id, pair_sum_scores
 from .solvers.baselines import EmbeddingModel
 
 PAIRS = np.array(list(combinations(range(16), 2)))  # (120, 2)

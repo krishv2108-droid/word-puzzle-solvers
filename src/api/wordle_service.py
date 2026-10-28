@@ -60,7 +60,7 @@ class WordleService:
             raise InputError(f"solver must be one of {sorted(self.rankers)}")
         history = self.parse_history(entries)
         cand = self.data.candidates(history)
-        remaining = int(len(cand))
+        remaining = len(cand)
         words = [self.data.answers[i] for i in cand]
         base = {
             "remaining": remaining,
@@ -73,7 +73,8 @@ class WordleService:
         }
         if remaining == 0:
             return {**base, "suggestions": [], "message":
-                    "No possible answer matches this feedback. Check the guesses and colours for a typo."}
+                    "No possible answer matches this feedback. Check the guesses and colours for a typo. "
+                    "If they are right, the answer may be a newer word: this tool knows the 2,315 original Wordle answers."}
         if remaining == 1:
             return {**base, "suggestions": [self._single(history, words[0], hard_mode)], "message":
                     f"Only one word fits: {words[0].upper()}."}

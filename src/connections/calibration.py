@@ -15,7 +15,7 @@ from __future__ import annotations
 
 import numpy as np
 
-from .learned import groups_correct, logits_to_matrix, solve_from_pair_scores
+from .learned import logits_to_matrix
 from .partition import all_groups, best_partitions, group_id, pair_sum_scores
 
 

@@ -21,7 +21,7 @@ COPY --chown=user . .
 
 # Bake the slow one-time work into the image so the app starts in seconds:
 # the three embedding models, the Wordle pattern matrix, and the 2.6M-partition table.
-RUN python -c "from sentence_transformers import SentenceTransformer as S; [S(n, device='cpu') for n in ('all-mpnet-base-v2', 'all-MiniLM-L6-v2', 'BAAI/bge-large-en-v1.5')]" \
+RUN python -c "from sentence_transformers import SentenceTransformer as S; from src.connections.solvers.baselines import MODEL_REVISIONS as R; [S(n, device='cpu', revision=r) for n, r in R.items()]" \
  && python -c "from src.wordle.solvers.base import WordleData; WordleData.load()" \
  && python -c "from src.connections.partition import all_partitions; all_partitions()"
 

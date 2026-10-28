@@ -4,6 +4,7 @@
 """
 from __future__ import annotations
 
+import contextlib
 import logging
 import threading
 from contextlib import asynccontextmanager
@@ -22,10 +23,18 @@ BUNDLE = Path(__file__).resolve().parents[2] / "data" / "cache" / "connections_m
 
 
 def _warm_connections(svc: ConnectionsService) -> None:
-    try:
+    with contextlib.suppress(Exception):  # warming is best-effort
         svc.solve([f"warm{i}" for i in range(16)])
-    except Exception:  # warming is best-effort
-        pass
+
+
+class RevalidatingStaticFiles(StaticFiles):
+    """Static files that browsers must revalidate (ETag) on each load, so a redeploy is never
+    shadowed by a stale cached app.js or style.css."""
+
+    async def get_response(self, path, scope):
+        response = await super().get_response(path, scope)
+        response.headers["Cache-Control"] = "no-cache"
+        return response
 
 
 class GuessEntry(BaseModel):
@@ -80,7 +89,7 @@ async def input_error_handler(request, exc: InputError):
     return JSONResponse(status_code=422, content={"detail": str(exc)})
 
 
-@app.get("/api/health")
+@app.api_route("/api/health", methods=["GET", "HEAD"])  # monitors and uptime pingers send HEAD
 def health() -> dict:
     return {"status": "ok"}
 
@@ -127,8 +136,8 @@ def connections_hint(req: HintRequest) -> dict:
 
 
 if WEB_DIR.exists():
-    app.mount("/static", StaticFiles(directory=WEB_DIR), name="static")
+    app.mount("/static", RevalidatingStaticFiles(directory=WEB_DIR), name="static")
 
-    @app.get("/", include_in_schema=False)
+    @app.api_route("/", methods=["GET", "HEAD"], include_in_schema=False)
     def index() -> FileResponse:
         return FileResponse(WEB_DIR / "index.html")

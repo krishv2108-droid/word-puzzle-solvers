@@ -1,6 +1,7 @@
 """Shared evaluation runner: play every puzzle with a solver and aggregate metrics."""
 from __future__ import annotations
 
+import math
 import statistics
 import time
 from collections import Counter
@@ -44,7 +45,18 @@ class Summary:
         d = asdict(self)
         d["histogram"] = {str(k): v for k, v in sorted(self.histogram.items())}
         d["solved_within"] = {str(k): v for k, v in sorted(self.solved_within.items())}
-        return d
+        return _json_safe(d)
+
+
+def _json_safe(x):
+    """Replace NaN/inf (not valid JSON; e.g. mean steps of an approach that never solves) with None."""
+    if isinstance(x, float) and not math.isfinite(x):
+        return None
+    if isinstance(x, dict):
+        return {k: _json_safe(v) for k, v in x.items()}
+    if isinstance(x, (list, tuple)):
+        return [_json_safe(v) for v in x]
+    return x
 
 
 def run_episode(env: Environment, solver: Solver, puzzle) -> EpisodeResult:

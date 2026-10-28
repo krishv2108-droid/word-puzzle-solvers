@@ -15,8 +15,11 @@ from pathlib import Path
 
 import numpy as np
 
+from ..common.cachefile import load_npy, save_npy
+
 CACHE = Path(__file__).resolve().parents[2] / "data" / "cache" / "partitions16.npy"
 N_WORDS = 16
+N_PARTITIONS = 2_627_625  # 16! / (4!^4 * 4!)
 
 
 @lru_cache(maxsize=None)
@@ -33,8 +36,9 @@ def group_ids() -> dict[tuple[int, ...], int]:
 @lru_cache(maxsize=None)
 def all_partitions() -> np.ndarray:
     """(2627625, 4) group ids; each row is one partition into four groups."""
-    if CACHE.exists():
-        return np.load(CACHE)
+    cached = load_npy(CACHE, shape=(N_PARTITIONS, 4))
+    if cached is not None:
+        return cached
     ids = group_ids()
     out = []
     for g1 in combinations(range(1, N_WORDS), 3):
@@ -48,8 +52,7 @@ def all_partitions() -> np.ndarray:
                 d = tuple(w for w in rest2 if w not in c)
                 out.append((ids[a], ids[b], ids[c], ids[d]))
     parts = np.array(out, dtype=np.uint16)
-    CACHE.parent.mkdir(parents=True, exist_ok=True)
-    np.save(CACHE, parts)
+    save_npy(CACHE, parts)
     return parts
 
 

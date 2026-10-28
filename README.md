@@ -184,7 +184,7 @@ so a new game or approach is benchmarked and reported by the same code.
   [`eric27n/NYT-Connections`](https://huggingface.co/datasets/eric27n/NYT-Connections) Hugging Face
   dataset (Apache-2.0, compiled from the NYT archive). The puzzle content belongs to The New York
   Times, so the data is **downloaded by a script, gitignored, and never committed or served**. This
-  is a non-commercial research and education project.
+  is a non-commercial research and education project. The download script pins the dataset to an exact commit and verifies its SHA-256 (the Wordle lists are checksummed too), and the embedding models load at pinned revisions, so the held-out split and the embeddings cannot change silently.
 - **Leakage.** Every puzzle predates the language models' training cutoffs, so LLM scores here are
   an **upper bound** on performance on genuinely new puzzles; no clean post-cutoff holdout exists in
   this project. I did not scrape one: NYT's terms prohibit scraping its content. A **memorization
@@ -251,7 +251,7 @@ python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 python data/download_wordle.py              # original Wordle word lists
 python data/download_connections.py         # dev dataset (gitignored; NYT content, see above)
-pytest                                      # 129 tests
+pytest                                      # 160 tests
 ```
 
 ```bash
@@ -307,7 +307,7 @@ src/api/         FastAPI app and services
 web/             plain HTML/JS/CSS frontend (no build step)
 data/            download scripts; downloaded data is gitignored
 results/         committed benchmark tables (md + json) and per-episode records
-tests/           129 tests
+tests/           160 tests
 deploy/          Dockerfile, Space builder, minimal Render requirements
 render.yaml      Render Blueprint (Wordle on the free tier)
 ```

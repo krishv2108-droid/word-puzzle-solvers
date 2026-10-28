@@ -22,8 +22,6 @@ class FrequencySolver(WordleSolver):
 
     def choose(self, state: WordleState, cand: np.ndarray) -> str:
         L = self.data.answer_letters[cand]  # (n, 5)
-        n = len(cand)
-        rows = np.arange(n)[:, None]
         positional = np.zeros((5, 26))
         for i in range(5):
             positional[i] = np.bincount(L[:, i], minlength=26)

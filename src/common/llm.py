@@ -21,6 +21,7 @@ from dataclasses import asdict, dataclass
 from pathlib import Path
 from typing import Protocol
 
+from .cachefile import atomic_open
 from .solver import Usage
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -68,17 +69,23 @@ class ReplyCache:
 
     def get(self, req: dict) -> LLMReply | None:
         path = self._path(req)
-        if path and path.exists():
+        if not (path and path.exists()):
+            return None
+        try:
             hit = json.loads(path.read_text())
             return LLMReply(hit["data"], None, Usage(**hit["usage"]), hit["latency_s"], True)
-        return None
+        except (OSError, ValueError, KeyError, TypeError):
+            return None  # unreadable or corrupt entry: treat as a miss and regenerate
 
     def put(self, req: dict, reply: LLMReply) -> None:
         path = self._path(req)
         if path and reply.data is not None:
-            path.parent.mkdir(parents=True, exist_ok=True)
-            path.write_text(json.dumps(
-                {"data": reply.data, "usage": asdict(reply.usage), "latency_s": reply.latency_s}))
+            payload = {"data": reply.data, "usage": asdict(reply.usage), "latency_s": reply.latency_s}
+            try:
+                with atomic_open(path, "w") as f:
+                    json.dump(payload, f)
+            except OSError:
+                pass  # the cache is an optimisation; a read-only directory must not fail the call
 
 
 class AnthropicJSONClient:

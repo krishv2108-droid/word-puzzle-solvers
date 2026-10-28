@@ -17,7 +17,7 @@ from pathlib import Path
 import numpy as np
 
 from ..common.evaluate import evaluate, summarize
-from .benchmark import EPISODES_DIR, split_test_dev
+from .benchmark import split_test_dev
 from .data import load_puzzles
 from .env import ConnectionsEnv
 from .learned import (LearnedModel, LearnedSolver, cross_validate, feature_matrix, fit_pair_model,
