@@ -3,7 +3,7 @@
 Solvers for **Wordle** and **NYT Connections**, a rigorous evaluation harness that benchmarks every
 approach, and a web UI with a tab for each game.
 
-**Live demo (Wordle):** RENDER_URL_PLACEHOLDER &nbsp;·&nbsp; Connections runs locally (it needs a few GB of RAM; see [Deploy](#deploy)).
+**Live demo (Wordle):** https://nyt-games-solver.onrender.com &nbsp;·&nbsp; free hosting, so the first load after a pause takes up to a minute to wake. Connections runs locally (it needs a few GB of RAM; see [Deploy](#deploy)).
 
 | Wordle assistant | Watch the solver |
 |---|---|
