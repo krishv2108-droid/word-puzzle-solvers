@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>NYT Games Solver</title>
+  <title>Word Puzzle Solvers</title>
   <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
   <header class="top">
     <div class="wrap top-inner">
-      <h1>NYT Games Solver</h1>
+      <h1>Word Puzzle Solvers</h1>
       <nav class="tabs" role="tablist" aria-label="Game">
         <button class="tab active" role="tab" id="tab-wordle" aria-selected="true" aria-controls="panel-wordle">Wordle</button>
         <button class="tab" role="tab" id="tab-connections" aria-selected="false" aria-controls="panel-connections">Connections</button>
@@ -115,8 +115,8 @@
         <p>The Connections solver loads three sentence-embedding models (a couple of gigabytes of memory), which is more than
           this free demo host provides. The Wordle tab is fully live here.</p>
         <p>To try Connections, run it on your own machine:</p>
-        <pre class="code">git clone https://github.com/krishv2108-droid/nyt-games-solver
-cd nyt-games-solver &amp;&amp; pip install -r requirements.txt
+        <pre class="code">git clone https://github.com/krishv2108-droid/word-puzzle-solvers
+cd word-puzzle-solvers &amp;&amp; pip install -r requirements.txt
 python data/download_connections.py
 python -m src.connections.train
 uvicorn src.api.main:app</pre>

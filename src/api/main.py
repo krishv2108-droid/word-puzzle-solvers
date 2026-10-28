@@ -70,7 +70,7 @@ async def lifespan(app: FastAPI):
     yield
 
 
-app = FastAPI(title="NYT Games Solver", version="1.0", lifespan=lifespan)
+app = FastAPI(title="Word Puzzle Solvers", version="1.0", lifespan=lifespan)
 
 
 @app.exception_handler(InputError)

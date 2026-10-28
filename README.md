@@ -1,6 +1,6 @@
-# NYT Games Solver
+# Word Puzzle Solvers
 
-Solvers for **Wordle** and **NYT Connections**, a rigorous evaluation harness that benchmarks every
+Solvers for **Wordle** and the **Connections** word-grouping puzzle, a rigorous evaluation harness that benchmarks every
 approach, and a web UI with a tab for each game.
 
 **Live demo (Wordle):** https://nyt-games-solver.onrender.com &nbsp;·&nbsp; free hosting, so the first load after a pause takes up to a minute to wake. Connections runs locally (it needs a few GB of RAM; see [Deploy](#deploy)).
@@ -288,7 +288,7 @@ Wordle works without the training step; the Connections tab needs the trained mo
   ```bash
   python -m src.connections.train             # build the model first
   python deploy/build_space.py                # stages build/space
-  docker build -t nyt-games-solver build/space && docker run -p 7860:7860 nyt-games-solver
+  docker build -t word-puzzle-solvers build/space && docker run -p 7860:7860 word-puzzle-solvers
   ```
 
   I verified the staged bundle in a clean virtualenv with only the pinned runtime packages. I could

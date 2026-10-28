@@ -43,7 +43,7 @@ def upload(repo_id: str) -> None:
     api = HfApi()
     api.create_repo(repo_id, repo_type="space", space_sdk="docker", exist_ok=True)
     api.upload_folder(folder_path=str(OUT), repo_id=repo_id, repo_type="space",
-                      commit_message="Deploy NYT Games Solver")
+                      commit_message="Deploy Word Puzzle Solvers")
     print(f"uploaded: https://huggingface.co/spaces/{repo_id}")
 
 

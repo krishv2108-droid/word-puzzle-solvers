@@ -1,5 +1,5 @@
 ---
-title: NYT Games Solver
+title: Word Puzzle Solvers
 colorFrom: blue
 colorTo: green
 sdk: docker
@@ -8,9 +8,9 @@ pinned: false
 short_description: Wordle and Connections solvers with an interactive UI
 ---
 
-# NYT Games Solver
+# Word Puzzle Solvers
 
-Interactive solvers for Wordle and NYT Connections.
+Interactive solvers for Wordle and the Connections word-grouping puzzle.
 
 - **Wordle assistant**: enter the word you played and the colours; get the best next guesses
   ranked by expected information gain.

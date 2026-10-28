@@ -119,6 +119,6 @@ def test_simulate_rejects_unknown_answer(client):
 
 def test_index_and_static_assets_are_served(client):
     page = client.get("/")
-    assert page.status_code == 200 and "NYT Games Solver" in page.text
+    assert page.status_code == 200 and "Word Puzzle Solvers" in page.text
     for path in ("/static/app.js", "/static/style.css"):
         assert client.get(path).status_code == 200
